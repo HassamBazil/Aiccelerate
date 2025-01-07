@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #fff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link:hover {
+  color: #a78bfa;
+  transition: color 0.2s ease-in-out;
+}
+
+.learn-more-btn {
+  border: 1px solid white;
+  transition: all 0.2s ease-in-out;
+}
+
+.learn-more-btn:hover {
+  background: white;
+  color: black;
+}
+
+section {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h2, h3 {
+  font-weight: 300;
+  font-size: 50px;
+  font-family: 'Prata', serif;
+}
+
+.gradient-rainbow {
+  background: linear-gradient(86.92deg, #F2F7D1 -1.75%, #AEDCF6 14.45%, #A1F2D1 37.6%, #ECA4FB 54.39%, #979CFE 70.01%, #E3BAF7 82.74%, #CDDEE9 99.04%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.scramble-text {
+  font-family: 'Prata', serif;
+  line-height: 1.2;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.scramble-text .dud {
+  opacity: 0.6;
+  color: #ff007f; /* Optional color for scrambling characters */
+}
+
+.faq-section h3 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.faq-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.faq-section p.active {
+  opacity: 1;
+  max-height: 500px;
+  margin-top: 1rem;
+}
+
+.faq-section .cursor-pointer:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Add these styles for the hero section */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Optional: Add a gradient overlay for better text visibility */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3)
+  );
+}
+
+/* Add specific styles for main section headers */
+.section-title {
+  font-family: 'Prata', serif;
+  letter-spacing: -0.02em;
+}
+
+/* Specific styles for AGENT framework */
+.agent-letter {
+  font-family: 'Prata', serif;
+  line-height: 0.8;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.agent-section {
+  position: relative;
+}
+
+/* Optional: Add subtle gradient to the borders */
+.agent-section::before,
+.agent-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.agent-section::before {
+  top: 0;
+}
+
+.agent-section::after {
+  bottom: 0;
+}
+
+/* Gradient border effect */
+.border-gradient {
+  position: relative;
+}
+
+.border-gradient::before,
+.border-gradient::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+.border-gradient::before {
+  top: 0;
+}
+
+.border-gradient::after {
+  bottom: 0;
+}
+
