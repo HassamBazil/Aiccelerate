@@ -9,7 +9,7 @@ interface AnimatedNumberProps {
 }
 
 const AnimatedNumber = ({ finalValue, className, duration = 2500, style }: AnimatedNumberProps) => {
-  const [currentValue, setCurrentValue] = useState(0);
+  const [currentValue, setCurrentValue] = useState(10000000000);
   const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
@@ -20,13 +20,13 @@ const AnimatedNumber = ({ finalValue, className, duration = 2500, style }: Anima
         const increment = Math.floor(Math.random() * 1000);
         const newValue = prev + increment;
         
-        if (newValue >= finalValue) {
+        if (newValue >= finalValue + 10000000000) {
           setIsAnimating(false);
-          return finalValue;
+          return finalValue + 10000000000;
         }
         return newValue;
       });
-    }, 100); // Update every 100ms for smoother animation
+    }, 100);
 
     return () => clearInterval(interval);
   }, [finalValue, isAnimating]);

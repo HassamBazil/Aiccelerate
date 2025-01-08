@@ -176,7 +176,7 @@ export default function Home() {
           </motion.h2>
           
           <motion.div 
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-8 mb-8 max-w-4xl mx-auto px-4 sm:px-6"
+            className="grid grid-cols-3 md:grid-cols-6 gap-4 sm:gap-8 mb-8 max-w-4xl mx-auto px-4 sm:px-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -191,14 +191,14 @@ export default function Home() {
               { src: "/images/CompanyLogos/DelphiDigital.jpg", alt: "Partner 6" },
               { src: "/images/CompanyLogos/EigenLayer.jpg", alt: "Partner 7" },
               { src: "/images/CompanyLogos/Abstract.jpg", alt: "Partner 8" },
-              { src: "/images/CompanyLogos/ArcProtocol.jpg", alt: "Partner 9" },
+              { src: "/images/CompanyLogos/ARCProtocol.jpg", alt: "Partner 9" },
               { src: "/images/CompanyLogos/StoryProtocol.jpg", alt: "Partner 10" },
               { src: "/images/CompanyLogos/TopologyVentures.jpeg", alt: "Partner 11" },
               { src: "/images/CompanyLogos/Bankless.png", alt: "Partner 12" }
             ].map((partner, index) => (
               <motion.div
                 key={index}
-                className="aspect-square bg-white/5 rounded-lg hover:bg-white/10 transition-colors p-4 flex items-center justify-center"
+                className="aspect-square bg-white/5 rounded-lg hover:bg-white/10 transition-colors p-2 sm:p-4 flex items-center justify-center"
                 variants={itemVariants}
                 whileHover={{ 
                   scale: 1.05,
@@ -851,7 +851,7 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <Image
-                src="/images/HumanDude.png"
+                src="/images/Human.png"
                 alt="Human Component"
                 width={500}
                 height={600}
@@ -933,7 +933,8 @@ export default function Home() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-6xl md:text-7xl text-center mb-16 section-title"
+            className="text-3xl text-center mb-16 section-title"
+            style={{ fontFamily: 'Barlow Semi Condensed' }}
             initial={{ y: 50, scale: 0.95 }}
             whileInView={{ y: 0, scale: 1 }}
             transition={{ 
@@ -1198,7 +1199,7 @@ export default function Home() {
           height={240}
           className="mx-auto mb-4"
         />
-        <p className="text-2xl gradient-rainbow">ACCELERATE</p>
+        <p className="text-2xl gradient-rainbow">AICCELERATE</p>
       </div>
 
       {/* Footer */}

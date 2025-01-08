@@ -25,6 +25,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Prata&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/Logo.jpeg" sizes="any" />
       </head>
       <body className={`${prata.variable} ...other classes`}>{children}</body>
     </html>
