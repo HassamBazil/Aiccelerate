@@ -1,114 +1,100 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useState, useEffect, useRef } from 'react';
 
-interface TextScrambleProps {
-  textParts: string[]; // Split text into parts (e.g., ["ACCELERATING", "CRYPTO X AI"])
-  hoverTextParts?: string[]; // Split hover text into parts
-}
+const TextScramble = ({ textParts, hoverTextParts }: { textParts: string[], hoverTextParts: string[] }) => {
+  const [displayedText, setDisplayedText] = useState<string[]>(textParts);
+  const [isScrambling, setIsScrambling] = useState(false);
+  const [canScramble, setCanScramble] = useState(true);
+  const frameRequest = useRef<number>();
+  const frame = useRef(0);
+  const queue = useRef<{ from: string; to: string; start: number; end: number; }[]>([]);
 
-const TextScramble: React.FC<TextScrambleProps> = ({ textParts, hoverTextParts }) => {
-  const [isHydrated, setIsHydrated] = useState(false);
-  const [displayedParts, setDisplayedParts] = useState<string[]>(textParts); // Static rendering
-  const chars = "!<>-_\\/[]{}—=+*^?#________";
-  const queueRef = useRef<
-    { from: string; to: string; start: number; end: number; char?: string }[][]
-  >([]);
-  const frameRef = useRef<number>(0);
-  const animationRef = useRef<number | null>(null);
-  const isAnimatingRef = useRef<boolean>(false);
-
-  const scrambleText = (targetParts: string[]) => {
-    if (isAnimatingRef.current) return; // Prevent multiple animations
-    isAnimatingRef.current = true;
-
-    const newQueue: typeof queueRef.current = targetParts.map((target, i) => {
-      const oldText = displayedParts[i] || "";
-      const length = Math.max(oldText.length, target.length);
-      const queue = [];
-
-      for (let j = 0; j < length; j++) {
-        const from = oldText[j] || "";
-        const to = target[j] || "";
-        const start = Math.floor(Math.random() * 40);
-        const end = start + Math.floor(Math.random() * 40);
-        queue.push({ from, to, start, end });
-      }
-
-      return queue;
-    });
-
-    queueRef.current = newQueue;
-    frameRef.current = 0;
-
-    if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    animationRef.current = requestAnimationFrame(updateText);
+  const randomChar = () => {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    return alphabet[Math.floor(Math.random() * alphabet.length)];
   };
 
-  const updateText = () => {
+  const update = () => {
     let complete = 0;
+    let output = [];
 
-    const newDisplayedParts = queueRef.current.map((queue) => {
-      let output = "";
-      let localComplete = 0;
-
-      for (const q of queue) {
-        const { from, to, start, end } = q;
-
-        if (frameRef.current >= end) {
-          output += to;
-          localComplete++;
-        } else if (frameRef.current >= start) {
-          const randomChar = chars[Math.floor(Math.random() * chars.length)];
-          output += randomChar;
-        } else {
-          output += from;
+    for (let i = 0, n = queue.current.length; i < n; i++) {
+      let { from, to, start, end } = queue.current[i];
+      let current = [];
+      
+      if (frame.current >= end) {
+        complete++;
+        output.push(to);
+      } else if (frame.current >= start) {
+        const scrambleCount = Math.min(8, from.length);
+        const revealPoint = Math.floor((frame.current - start) / 4);
+        
+        for (let j = 0; j < from.length; j++) {
+          if (j < revealPoint) {
+            current.push(to[j]);
+          } else if (j < revealPoint + scrambleCount) {
+            current.push(randomChar());
+          } else {
+            current.push(to[j]);
+          }
         }
+        output.push(current.join(''));
+      } else {
+        output.push(from);
       }
-
-      if (localComplete === queue.length) complete++;
-      return output;
-    });
-
-    setDisplayedParts(newDisplayedParts);
-
-    if (complete < queueRef.current.length) {
-      frameRef.current++;
-      animationRef.current = requestAnimationFrame(updateText);
-    } else {
-      isAnimatingRef.current = false; // Animation complete
     }
+
+    setDisplayedText(output);
+    frame.current++;
+
+    if (complete === queue.current.length) {
+      setIsScrambling(false);
+      return;
+    }
+
+    setTimeout(() => {
+      frameRequest.current = requestAnimationFrame(update);
+    }, 30);
+  };
+
+  const startScramble = (fromText: string[], toText: string[]) => {
+    if (isScrambling || !canScramble) return;
+    
+    setIsScrambling(true);
+    setCanScramble(false);
+    frame.current = 0;
+    queue.current = [];
+
+    for (let i = 0; i < Math.max(fromText.length, toText.length); i++) {
+      const from = fromText[i] || '';
+      const to = toText[i] || '';
+      const start = frame.current;
+      const end = start + 35;
+      queue.current.push({ from, to, start, end });
+    }
+
+    cancelAnimationFrame(frameRequest.current!);
+    frameRequest.current = requestAnimationFrame(update);
   };
 
   useEffect(() => {
-    setIsHydrated(true); // Mark as hydrated
+    return () => {
+      cancelAnimationFrame(frameRequest.current!);
+    };
   }, []);
 
-  const handleMouseEnter = () => scrambleText(hoverTextParts || textParts);
-  const handleMouseLeave = () => scrambleText(textParts);
-
-  if (!isHydrated) {
-    // Render static text with <br /> tags
-    return (
-      <h1 className="scramble-text">
-        {textParts.map((part, i) => (
-          <React.Fragment key={i}>
-            {part}
-            {i < textParts.length - 1 && <br />}
-          </React.Fragment>
-        ))}
-      </h1>
-    );
-  }
-
-  // Render dynamic scrambling after hydration
   return (
-    <h1 className="scramble-text" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      {displayedParts.map((part, i) => (
-        <React.Fragment key={i}>
-          {part}
-          {i < displayedParts.length - 1 && <br />}
-        </React.Fragment>
+    <div 
+      className="scramble-text"
+      onMouseEnter={() => startScramble(textParts, hoverTextParts)}
+      onMouseLeave={() => {
+        setCanScramble(true);
+        startScramble(hoverTextParts, textParts);
+      }}
+    >
+      {displayedText.map((text, index) => (
+        <div key={index}>{text}</div>
       ))}
-    </h1>
+    </div>
   );
 };
 

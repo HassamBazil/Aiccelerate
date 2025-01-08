@@ -83,6 +83,13 @@ export default function Home() {
     }
   };
 
+  const scrollToMission = () => {
+    document.getElementById('mission-section')?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
   return (
     <main className="min-h-screen relative">
       {/* Navigation */}
@@ -104,10 +111,10 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <span className="text-xl sm:text-[30px]">
+            <span className="text-xl sm:text-[30px] font-prata" style={{ fontFamily: 'prata' }}>
               Aiccelerate
             </span>
-          </div>
+        </div>
           <Link 
             href="https://twitter.com" 
             className="nav-link flex items-center md:pr-8 lg:pr-1"
@@ -137,16 +144,18 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-tight">
               <TextScramble
-                textParts={["ACCELERATING", "CRYPTO X AI"]}
-                hoverTextParts={["ACCELERATING", "CRYPTO X AI"]}
+                textParts={["Accelerating", "Crypto x AI"]}
+                hoverTextParts={["Accelerating", "Crypto x AI"]}
               />
             </div>
             
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-              We are a collective of AI investors, researchers and developers with backgrounds from the top open source protocols, Coinbase, Google, and some of the major funds. We believe crypto x AI is at an inflection point and our mission is to accelerate effectively.
-            </p>
+            We are a DAO of investors, developers and researchers with backgrounds from the top open source AI teams, Coinbase, Google, and major funds. We believe crypto x AI is at an inflection point and our mission is to accelerate effectively via investing and building. </p>
 
-            <button className="learn-more-btn px-8 py-3 text-lg border border-white hover:bg-white hover:text-black transition-all duration-300">
+            <button 
+              onClick={scrollToMission}
+              className="learn-more-btn px-8 py-3 text-lg border border-white hover:bg-white hover:text-black transition-all duration-300 rounded-[5px]"
+            >
               Learn More
             </button>
           </div>
@@ -174,18 +183,18 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
           >
             {[
-              { src: "/images/partners/image 2.png", alt: "Partner 1" },
-              { src: "/images/partners/image 3.png", alt: "Partner 2" },
-              { src: "/images/partners/image 4.png", alt: "Partner 3" },
-              { src: "/images/partners/image 5.png", alt: "Partner 4" },
-              { src: "/images/partners/image 6.png", alt: "Partner 5" },
-              { src: "/images/partners/image 7.png", alt: "Partner 6" },
-              { src: "/images/partners/image 8.png", alt: "Partner 7" },
-              { src: "/images/partners/image 9.png", alt: "Partner 8" },
-              { src: "/images/partners/image 10.png", alt: "Partner 9" },
-              { src: "/images/partners/image 11.png", alt: "Partner 10" },
-              { src: "/images/partners/image 12.png", alt: "Partner 11" },
-              { src: "/images/partners/image 13.png", alt: "Partner 12" }
+              { src: "/images/CompanyLogos/Coinbase.png", alt: "Partner 1" },
+              { src: "/images/CompanyLogos/Google.jpg", alt: "Partner 2" },
+              { src: "/images/CompanyLogos/NousResearch.jpg", alt: "Partner 3" },
+              { src: "/images/CompanyLogos/Ai16z.png", alt: "Partner 4" },
+              { src: "/images/CompanyLogos/VirtualsProtocol.png", alt: "Partner 5" },
+              { src: "/images/CompanyLogos/DelphiDigital.jpg", alt: "Partner 6" },
+              { src: "/images/CompanyLogos/EigenLayer.jpg", alt: "Partner 7" },
+              { src: "/images/CompanyLogos/Abstract.jpg", alt: "Partner 8" },
+              { src: "/images/CompanyLogos/ArcProtocol.jpg", alt: "Partner 9" },
+              { src: "/images/CompanyLogos/StoryProtocol.jpg", alt: "Partner 10" },
+              { src: "/images/CompanyLogos/TopologyVentures.jpeg", alt: "Partner 11" },
+              { src: "/images/CompanyLogos/Bankless.png", alt: "Partner 12" }
             ].map((partner, index) => (
               <motion.div
                 key={index}
@@ -208,7 +217,7 @@ export default function Home() {
           </motion.div>
           
           <motion.p 
-            className="text-gray-400 text-[30px]"
+            className="font-400 text-[30px]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -242,27 +251,31 @@ export default function Home() {
             {[
               {
                 name: "Mark",
-                twitter: "@markus0x",
-                description: "Crypto Angel Investing since 2016. Former Head of Research at ICON VC, Prev University of Pennsylvania & Seoul National University.",
-                image: "/images/mainimage.png"
+                twitter: "@markus9x",
+                link: "https://x.com/markus9x",
+                description: "Crypto Angel Investing since 2016. Former Head of Research at ICON VC. Prev University of Pennsylvania & Seoul National University.",
+                image: "images/OurTeam/Mark.jpg"
               },
               {
                 name: "Ejaaz",
                 twitter: "@cryptopunk7213",
-                description: "Crypto X AI Fund Manager, Angel Investor, Former product lead at Coinbase, ConseSys.",
-                image: "/images/mainimage.png"
+                link: "https://x.com/cryptopunk7213",
+                description: "Crypto X AI Fund Manager, Angel Investor, Former product lead at Coinbase, ConsenSys.",
+                image: "/images/OurTeam/Ejaaz.jpg"
               },
               {
                 name: "Ropirito",
                 twitter: "@ropirito",
-                description: "Researcher In-Residence @ Nous Research, AI Engineer in Finance & Healthcare Industries. Deployed @God, @s8n, @ropirito & @tee_hee_he. MBA Chicago Booth.",
-                image: "/images/mainimage.png"
+                link: "https://x.com/ropirito",
+                description: "Researcher In-Residence @ Nous Research, AI Engineer in Finance & Healthcare Industries. Deployed @God, @s8n, @ropairito & @tee_hee_he. MBA Chicago Booth.",
+                image: "/images/OurTeam/Ropitoro.jpg"
               },
               {
                 name: "Aiccelerate Agent",
                 twitter: "?",
+                link: "",
                 description: "Research/alpha agent",
-                image: "/images/mainimage.png"
+                image: "/images/OurTeam/AIAgent.png"
               }
             ].map((member, index) => (
               <motion.div 
@@ -270,9 +283,20 @@ export default function Home() {
                 className="flex flex-col"
                 variants={itemVariants}
               >
-                <div className="mb-6">
-                  <h3 className="text-3xl font-light mb-1">{member.name}</h3>
-                  <p className="text-gray-400 text-lg">{member.twitter}</p>
+                <div className="mb-6" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                  <h3 className="text-3xl font-light mb-1" style={{ fontFamily: 'Barlow Semi Condensed' }}>{member.name}</h3>
+                  {member.link ? (
+                    <Link 
+                      href={member.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors text-lg"
+                    >
+                      {member.twitter}
+                    </Link>
+                  ) : (
+                    <p className="text-gray-400 text-lg">{member.twitter}</p>
+                  )}
                 </div>
 
                 <motion.div 
@@ -283,8 +307,8 @@ export default function Home() {
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={400}
-                    height={400}
+                    width={212}
+                    height={202}
                     className="w-full h-full object-cover"
                     quality={100}
                   />
@@ -301,7 +325,7 @@ export default function Home() {
 
       {/* Advisors Section */}
       <section className="py-32">
-        <div className="container mx-auto px-6 max-w-6xl">
+        <div className="container mx-auto px-6 max-w-6xl" style={{ fontFamily: 'Barlow Semi Condensed' }}>
           <motion.h2 
             className="text-6xl md:text-7xl text-center mb-32 section-title"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -327,18 +351,18 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-light mb-4 uppercase tracking-wider">Development</h3>
+              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>Development</h3>
             </motion.div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
               {[
-                { name: "Shaw", role: "AI/82", twitter: "@shawmakesmagic", image: "/images/mainimage.png" },
-                { name: "Ethermage", role: "Virtuals Protocol", twitter: "@ethermage", image: "/images/mainimage.png" },
-                { name: "Jin", role: "AI/82", twitter: "@dankvr", image: "/images/mainimage.png" },
-                { name: "Karan", role: "Open Source Developer", twitter: "@karanx0x", image: "/images/mainimage.png" },
-                { name: "Nader", role: "Eigenlayer", twitter: "@dabit3", image: "/images/mainimage.png" },
-                { name: "Cygaar", role: "Abstract", twitter: "@0xCygaar", image: "/images/mainimage.png" },
-                { name: "Jason", role: "Story Protocol", twitter: "@jasonjhao", image: "/images/mainimage.png" },
-                { name: "Tachi", role: "ARC", twitter: "@0x1Tachi", image: "/images/mainimage.png" }
+                { name: "Shaw", role: "AI/82", twitter: "@shawmakesmagic", link: "https://x.com/shawmakesmagic", image: "/images/Development/Shaw.jpg" },
+                { name: "Ethermage", role: "Virtuals Protocol", twitter: "@ethermage", link: "https://x.com/ethermage", image: "/images/Development/EtherMage.jpg" },
+                { name: "Jin", role: "AI/82", twitter: "@dankvr", link: "https://x.com/dankvr", image: "/images/Development/Jin.jpg" },
+                { name: "Karan", role: "Open Source Developer", twitter: "@karan4d", link: "https://x.com/karan4d", image: "/images/Development/Karan.jpg" },
+                { name: "Nader", role: "Eigenlayer", twitter: "@dabit3", link: "https://x.com/dabit3", image: "/images/Development/Nadar.jpg" },
+                { name: "Cygaar", role: "Abstract", twitter: "@0xCygaar", link: "https://x.com/0xCygaar", image: "/images/Development/Cygaar.jpg" },
+                { name: "Jason", role: "Story Protocol", twitter: "@jasonjzhao", link: "https://x.com/jasonjzhao", image: "/images/Development/JasonZhao.png" },
+                { name: "Tachi", role: "ARC", twitter: "@0thTachi", link: "https://x.com/0thTachi", image: "/images/Development/Tachi.jpg" }
               ].map((advisor, index) => (
                 <motion.div
                   key={index}
@@ -374,8 +398,8 @@ export default function Home() {
                     <Image
                       src={advisor.image}
                       alt={advisor.name}
-                      width={400}
-                      height={400}
+                      width={130}
+                      height={126}
                       className="w-full h-full object-cover"
                       quality={100}
                     />
@@ -388,7 +412,14 @@ export default function Home() {
                   >
                     <h4 className="text-lg font-light">{advisor.name}</h4>
                     <p className="text-sm text-gray-400">{advisor.role}</p>
-                    <p className="text-sm text-gray-400">{advisor.twitter}</p>
+                    <Link 
+                      href={advisor.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {advisor.twitter}
+                    </Link>
                   </motion.div>
                 </motion.div>
               ))}
@@ -410,16 +441,16 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-light mb-4 uppercase tracking-wider">Investment</h3>
+              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>Investment</h3>
             </motion.div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
               {[
-                { name: "Andrew Kang", role: "Mechanism Capital", twitter: "@Rewkang" },
-                { name: "Marc Weinstein", role: "Mechanism Capital", twitter: "@WarcMeinstein" },
-                { name: "Casey Caruso", role: "Topology Ventures", twitter: "@caseycaruso" },
-                { name: "Ani Lulla", role: "Delphi Digital", twitter: "@anildoteth" },
-                { name: "Tommy Shaughnessy", role: "Delphi Digital", twitter: "@Shaughnessy119" },
-                { name: "Justin Lee", role: "Coinbase Ventures", twitter: "@jasonjhao" }
+                { name: "Andrew Kang", role: "Mechanism Capital", twitter: "@Rewkang", link: "https://x.com/Rewkang", image: "/images/Investment/Andrew.jpg" },
+                { name: "Marc Weinstein", role: "Mechanism Capital", twitter: "@WarcMeinstein", link: "https://x.com/WarcMeinstein", image: "/images/Investment/Marc.jpg" },
+                { name: "Casey Caruso", role: "Topology Ventures", twitter: "@caseykcaruso", link: "https://x.com/caseykcaruso", image: "/images/Investment/Casey.jpg" },
+                { name: "Anil Lulla", role: "Delphi Digital", twitter: "@anildelphi", link: "https://x.com/anildelphi", image: "/images/Investment/Anil.jpg" },
+                { name: "Tommy Shaughnessy", role: "Delphi Digital", twitter: "@Shaughnessy", link: "https://x.com/Shaughnessy", image: "/images/Investment/Tommy.jpg" },
+                { name: "Justin Lee", role: "Coinbase Ventures", twitter: "@shiny_shiba_", link: "https://x.com/shiny_shiba_", image: "/images/Investment/Justin.JPG" }
               ].map((advisor, index) => (
                 <motion.div
                   key={index}
@@ -453,10 +484,10 @@ export default function Home() {
                     transition={{ duration: 0.2 }}
                   >
                     <Image
-                      src="/images/mainimage.png"
+                      src={advisor.image}
                       alt={advisor.name}
-                      width={400}
-                      height={400}
+                      width={130}
+                      height={126}
                       className="w-full h-full object-cover"
                       quality={100}
                     />
@@ -469,7 +500,14 @@ export default function Home() {
                   >
                     <h4 className="text-lg font-light">{advisor.name}</h4>
                     <p className="text-sm text-gray-400">{advisor.role}</p>
-                    <p className="text-sm text-gray-400">{advisor.twitter}</p>
+                    <Link 
+                      href={advisor.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {advisor.twitter}
+                    </Link>
                   </motion.div>
                 </motion.div>
               ))}
@@ -491,16 +529,16 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-light mb-4 uppercase tracking-wider">Research</h3>
+              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>Research</h3>
             </motion.div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
               {[
-                { name: "Sammy", role: "Moca Network", twitter: "@SammyEth" },
-                { name: "Jeff", role: "Steak Studio", twitter: "@JeffDoJeff" },
-                { name: "Kel", role: "Independent Researcher", twitter: "@kelxyz" },
-                { name: "Baoskee", role: "Daodao", twitter: "@baoskee" },
-                { name: "Skely", role: "AI/82", twitter: "@234skely" },
-                { name: "Tang Yuan", role: "Chain of Thought", twitter: "@0xTangYuan" }
+                { name: "Sammy", role: "Moca Network", twitter: "@S4mmyEth", link: "https://x.com/S4mmyEth", image: "/images/Research/Sammy.jpg" },
+                { name: "Jeff", role: "Steak Studio", twitter: "@Defi0xJeff", link: "https://x.com/Defi0xJeff", image: "/images/Research/Jeff.jpg" },
+                { name: "Kel", role: "Independent Researcher", twitter: "@kelxyz_", link: "https://x.com/kelxyz_", image: "/images/Research/Kel.jpg" },
+                { name: "Baoskee", role: "Daosfun", twitter: "@baoskee", link: "https://x.com/baoskee", image: "/images/Research/Baoskee.jpg" },
+                { name: "Skely", role: "AI/82", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" },
+                { name: "Teng Yuan", role: "Chain of Thought", twitter: "@0xPrismatic", link: "https://x.com/0xPrismatic", image: "/images/Research/Teng.jpg" }
               ].map((advisor, index) => (
                 <motion.div
                   key={index}
@@ -534,10 +572,10 @@ export default function Home() {
                     transition={{ duration: 0.2 }}
                   >
                     <Image
-                      src="/images/mainimage.png"
+                      src={advisor.image}
                       alt={advisor.name}
-                      width={400}
-                      height={400}
+                      width={130}
+                      height={126}
                       className="w-full h-full object-cover"
                       quality={100}
                     />
@@ -550,7 +588,14 @@ export default function Home() {
                   >
                     <h4 className="text-lg font-light">{advisor.name}</h4>
                     <p className="text-sm text-gray-400">{advisor.role}</p>
-                    <p className="text-sm text-gray-400">{advisor.twitter}</p>
+                    <Link 
+                      href={advisor.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {advisor.twitter}
+                    </Link>
                   </motion.div>
                 </motion.div>
               ))}
@@ -571,13 +616,13 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-light mb-4 uppercase tracking-wider">Media Outreach</h3>
+              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>Media Outreach</h3>
             </motion.div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
               {[
-                { name: "David Hoffman", role: "Bankless", twitter: "@WarcMeinstein" },
-                { name: "Ryan Sean Adams", role: "Bankless", twitter: "@caseycaruso" },
-                { name: "Ani Lulla", role: "Probably Nothing", twitter: "@notthreadguy" }
+                { name: "David Hoffman", role: "Bankless", twitter: "@TrustlessState", link: "https://x.com/TrustlessState", image: "/images/MediaOutreach/DavidHoffman.jpg" },
+                { name: "Ryan Sean Adams", role: "Bankless", twitter: "@RyanSAdams", link: "https://x.com/RyanSAdams", image: "/images/MediaOutreach/RaySeanAdams.jpg" },
+                { name: "Threadguy", role: "Probably Nothing", twitter: "@notthreadguy", link: "https://x.com/notthreadguy", image: "/images/MediaOutreach/ThreadGuy.jpg" }
               ].map((advisor, index) => (
                 <motion.div
                   key={index}
@@ -611,10 +656,10 @@ export default function Home() {
                     transition={{ duration: 0.2 }}
                   >
                     <Image
-                      src="/images/mainimage.png"
+                      src={advisor.image}
                       alt={advisor.name}
-                      width={400}
-                      height={400}
+                      width={130}
+                      height={126}
                       className="w-full h-full object-cover"
                       quality={100}
                     />
@@ -627,7 +672,14 @@ export default function Home() {
                   >
                     <h4 className="text-lg font-light">{advisor.name}</h4>
                     <p className="text-sm text-gray-400">{advisor.role}</p>
-                    <p className="text-sm text-gray-400">{advisor.twitter}</p>
+                    <Link 
+                      href={advisor.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {advisor.twitter}
+                    </Link>
                   </motion.div>
                 </motion.div>
               ))}
@@ -646,23 +698,23 @@ export default function Home() {
           viewport={{ once: true }}
         >
           <motion.p 
-            className="text-sm text-gray-400 mb-4"
+            className="text-md text-gray-400 mb-4"
             variants={fadeInUp}
           >
             MARKET CAPITALIZATION OF CRYPTO X AGENTIC AI
           </motion.p>
-          <motion.div variants={fadeInUp}>
+          <motion.div variants={fadeInUp} style={{ fontFamily: 'prata' }}>
             <AnimatedNumber 
-              value={10000000000} 
-              className="text-[120px] font-light font-prata"
-              duration={2500}
+              finalValue={10000000000} 
+              className="text-[40px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-light font-prata gradient-rainbow"
+              duration={5000}
             />
           </motion.div>
         </motion.div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-32 relative">
+      <section id="mission-section" className="py-32 relative">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.h2 
             className="text-6xl md:text-7xl text-center mb-16 section-title"
@@ -697,9 +749,9 @@ export default function Home() {
 
         {/* Left Robohand */}
         <motion.div 
-          className="absolute -bottom-48 left-0 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] opacity-60 pointer-events-none"
+          className="absolute -bottom-48 left-0 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] opacity-100 pointer-events-none"
           initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 0.6, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.4 }}
         >
@@ -750,9 +802,9 @@ export default function Home() {
 
         {/* Right Robohand */}
         <motion.div 
-          className="absolute -bottom-24 right-0 w-[500px] opacity-60 pointer-events-none"
+          className="absolute -bottom-24 right-0 w-[500px] opacity-100 pointer-events-none"
           initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 0.6, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.4 }}
         >
@@ -792,14 +844,14 @@ export default function Home() {
           {/* Human Component */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32 relative">
             <motion.div 
-              className="relative w-full h-[600px] -top-24 -z-10"
+              className="relative w-full h-[600px] -top-20 -z-10"
               initial={{ x: -100, opacity: 0, rotateY: 45 }}
               whileInView={{ x: 0, opacity: 1, rotateY: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <Image
-                src="/images/Human.png"
+                src="/images/HumanDude.png"
                 alt="Human Component"
                 width={500}
                 height={600}
@@ -814,7 +866,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-light mb-4">Human</h3>
+              <h3 className="text-3xl mb-4" style={{ fontFamily: 'Barlow Semi Condensed' }}>Human</h3>
               <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
                 This would be the human component which invests and provides grants to both new and existing high potential projects and those that contribute to open source AI development.
               </p>
@@ -831,8 +883,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div 
               className="relative w-full h-[600px] order-1"
-              initial={{ scale: 0.8, opacity: 0, filter: "blur(10px)" }}
-              whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
@@ -856,7 +908,7 @@ export default function Home() {
               }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-light mb-4">Agent</h3>
+              <h3 className="text-3xl font-light mb-4" style={{ fontFamily: 'Barlow Semi Condensed' }}>Agent</h3>
               <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
                 Due to the high velocity of AI projects launching, our first initiative is to build an alpha/research agent with wide analysis across several different data feeds and custom metrics. A donation of x% to our DAO would trigger it to provide research/alpha on the project that donated.
               </p>
@@ -896,7 +948,7 @@ export default function Home() {
           </motion.h2>
           
           <motion.p 
-            className="text-center text-[25px] text-gray-300"
+            className="text-center text-[20px] text-gray-300"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ 
@@ -930,7 +982,7 @@ export default function Home() {
             A.G.E.N.T Project Analysis Framework
           </motion.h2>
           
-          <div className="space-y-8">
+          <div className="space-y-8" style={{ fontFamily: 'Barlow Semi Condensed' }}>
             {[
               {
                 letter: "A",
@@ -986,6 +1038,7 @@ export default function Home() {
               <motion.div
                 key={index}
                 className="relative grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
+                style={{ fontFamily: 'Barlow Semi Condensed' }}
                 initial={{ 
                   opacity: 0, 
                   x: index % 2 === 0 ? -50 : 50 
@@ -1000,21 +1053,29 @@ export default function Home() {
                   type: "spring",
                   stiffness: 50
                 }}
-                viewport={{ once: true }}
+                viewport={{ once: true }} 
+                
               >
                 <motion.div 
                   className="md:col-span-4 lg:col-span-5 flex justify-center md:justify-end md:pr-4"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
+                  initial={{ 
+                    opacity: 0,
+                    y: 20,
+                    filter: "blur(10px)"
+                  }}
+                  whileInView={{ 
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)"
+                  }}
                   transition={{ 
-                    duration: 0.6, 
-                    delay: index * 0.2 + 0.3,
-                    type: "spring",
-                    stiffness: 100
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.2
                   }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-light section-title leading-none block opacity-90 gradient-rainbow pt-4">
+                  <span className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-light section-title leading-none block opacity-90 pt-4">
                     {section.letter}
                   </span>
                 </motion.div>
@@ -1031,8 +1092,8 @@ export default function Home() {
                 >
                   <div className="absolute -top-4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                   
-                  <div className="py-6">
-                    <h3 className="text-3xl md:text-4xl mb-6 font-light tracking-wide">
+                  <div className="py-6" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                    <h3 className="text-3xl md:text-4xl mb-6 font-light tracking-wide" style={{ fontFamily: 'Barlow Semi Condensed' }}>
                       {section.title}
                     </h3>
                     <ul className="space-y-4 text-gray-300 text-lg">
@@ -1099,8 +1160,8 @@ export default function Home() {
                   <h3 className="text-2xl font-light">
                     Q: {faq.question}
                   </h3>
-                  <span className="text-4xl transform transition-transform duration-300">
-                    {openFaq === index ? "⌃" : "⌄"}
+                  <span className="text-2xl transform transition-transform duration-300">
+                    {openFaq === index ? "˄" : "˅"}
                   </span>
                 </div>
                 <div 
@@ -1120,7 +1181,7 @@ export default function Home() {
           <div className="mt-24 text-center">
             <Link 
               href="mailto:aicceleratedao@gmail.com"
-              className="inline-block border border-white px-8 py-3 text-lg hover:bg-white hover:text-black transition-all duration-300"
+              className="inline-block border border-white px-8 py-3 text-lg hover:bg-white hover:text-black transition-all duration-300 rounded-[5px]"
             >
               Contact Us
             </Link>
@@ -1133,11 +1194,11 @@ export default function Home() {
         <Image 
           src="/Logo.jpeg"
           alt="Aiccelerate Logo"
-          width={120}
-          height={120}
+          width={240}
+          height={240}
           className="mx-auto mb-4"
         />
-        <p className="text-2xl">ACCELERATE</p>
+        <p className="text-2xl gradient-rainbow">ACCELERATE</p>
       </div>
 
       {/* Footer */}
@@ -1146,19 +1207,19 @@ export default function Home() {
           <div className="flex justify-center items-center space-x-8 mb-4">
             <Link 
               href="https://twitter.com" 
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-gray-400 hover:text-white transition-colors rounded-[5px]"
             >
               Twitter
             </Link>
             <Link 
               href="https://telegram.com" 
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-gray-400 hover:text-white transition-colors rounded-[5px]"
             >
               Telegram
             </Link>
             <Link 
               href="https://discord.com" 
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-gray-400 hover:text-white transition-colors rounded-[5px]"
             >
               Discord
             </Link>

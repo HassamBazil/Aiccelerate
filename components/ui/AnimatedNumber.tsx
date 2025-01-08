@@ -1,52 +1,39 @@
 "use client";
-import { useEffect, useRef, useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface AnimatedNumberProps {
-  value: number;
-  duration?: number;
+  finalValue: number;
   className?: string;
+  duration?: number;
+  style?: React.CSSProperties;
 }
 
-const AnimatedNumber = ({ value, duration = 2000, className }: AnimatedNumberProps) => {
-  const [current, setCurrent] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
+const AnimatedNumber = ({ finalValue, className, duration = 2500, style }: AnimatedNumberProps) => {
+  const [currentValue, setCurrentValue] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-          const startTime = Date.now();
-          const updateNumber = () => {
-            const currentTime = Date.now();
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            
-            // Easing function for smooth animation
-            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-            setCurrent(Math.floor(easeOutQuart * value));
+    if (!isAnimating) return;
 
-            if (progress < 1) {
-              requestAnimationFrame(updateNumber);
-            }
-          };
-          requestAnimationFrame(updateNumber);
+    const interval = setInterval(() => {
+      setCurrentValue(prev => {
+        const increment = Math.floor(Math.random() * 1000);
+        const newValue = prev + increment;
+        
+        if (newValue >= finalValue) {
+          setIsAnimating(false);
+          return finalValue;
         }
-      },
-      { threshold: 0.5 }
-    );
+        return newValue;
+      });
+    }, 100); // Update every 100ms for smoother animation
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [value, duration, hasAnimated]);
+    return () => clearInterval(interval);
+  }, [finalValue, isAnimating]);
 
   return (
-    <div ref={ref} className={`gradient-rainbow ${className}`}>
-      ${current.toLocaleString()}
+    <div className={className} style={{ letterSpacing: '0.25em', ...style }}>
+      ${currentValue.toLocaleString()}
     </div>
   );
 };
