@@ -706,7 +706,7 @@ export default function Home() {
           <motion.div variants={fadeInUp} style={{ fontFamily: 'prata' }}>
             <AnimatedNumber 
               finalValue={10000000000} 
-              className="text-[40px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-light font-prata gradient-rainbow"
+              className="text-[32px] sm:text-[32px] md:text-[60px] lg:text-[120px] font-light font-prata gradient-rainbow"
               duration={5000}
             />
           </motion.div>
@@ -1227,7 +1227,7 @@ export default function Home() {
           </div>
           
           <div className="text-sm text-gray-400 space-x-4">
-            <span>© 2025 Trillions. All rights reserved.</span>
+            <span>© 2025 Aiccelerate. All rights reserved.</span>
             <Link 
               href="/privacy-policy" 
               className="hover:text-white transition-colors"
