@@ -116,7 +116,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <span className="text-xl sm:text-[30px] font-prata" style={{ fontFamily: 'prata' }}>
+            <span className="text-xl sm:text-[35px] font-prata" style={{ fontFamily: 'prata' }}>
               Aiccelerate
             </span>
         </div>
