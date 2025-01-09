@@ -251,8 +251,8 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <span className="text-xl sm:text-[35px] font-prata" style={{ fontFamily: 'prata' }}>
-              Aiccelerate
+            <span className="text-xl sm:text-[35px] font-prata uppercase" style={{ fontFamily: 'prata' }}>
+              Aiccelerate DAO
             </span>
         </div>
           <Link 
@@ -317,15 +317,19 @@ We will achieve this through a combination of supporting the leading teams of to
           viewport={{ once: true }}
         >
           <motion.p 
-            className="text-md font-400 text-[30px] mb-4 text-center"
+            className="text-md font-400 text-[20px] sm:text-[24px] md:text-[30px] mb-4 text-center"
             variants={fadeInUp}
           >
             MARKET CAPITALIZATION OF CRYPTO X AGENTIC AI
           </motion.p>
-          <motion.div variants={fadeInUp} style={{ fontFamily: 'prata' }}>
+          <motion.div 
+            variants={fadeInUp} 
+            style={{ fontFamily: 'prata' }}
+            className="flex justify-center"
+          >
             <AnimatedNumber 
               finalValue={10000000000} 
-              className="text-[27px] sm:text-[30px] md:text-[58px] lg:text-[120px] font-light font-prata gradient-rainbow text-left"
+              className="text-[27px] sm:text-[40px] md:text-[80px] lg:text-[120px] font-light font-prata gradient-rainbow text-center"
               duration={5000}
             />
           </motion.div>
@@ -557,7 +561,7 @@ We will achieve this through a combination of supporting the leading teams of to
                 image: "/images/OurTeam/Ropitoro.jpg"
               },
               {
-                name: "Aiccelerate Agent 1",
+                name: "AI Agent 1",
                 twitter: "@aiacceleratedao",
                 link: "https://x.com/aicceleratedao",
                 description: "Research/alpha agent",
@@ -570,18 +574,16 @@ We will achieve this through a combination of supporting the leading teams of to
                 variants={itemVariants}
               >
                 <Link 
-
                   href={member.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group cursor-pointer"
                 >
-                  <div className="h-[80px] mb-6 flex flex-col items-start" style={{ fontFamily: 'Barlow Semi Condensed' }}>
-                    <h3 className="text-2xl font-light leading-tight whitespace-nowrap text-left" 
-          style={{fontFamily: 'Barlow Semi Condensed'}}>
-                      {member.name}
-                    </h3>
-                    <div className="mt-2">
+                  <div className="h-[60px] mb-6" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-2xl font-light leading-tight whitespace-nowrap text-left">
+                        {member.name}
+                      </h3>
                       <Twitter size={20} className="text-gray-400 group-hover:text-white transition-colors" />
                     </div>
                   </div>
@@ -1394,16 +1396,44 @@ We will achieve this through a combination of supporting the leading teams of to
       </section>
 
       {/* Footer Logo */}
-      <div className="py-12 text-center">
-        <Image 
-          src="/LogoIcon.svg"
-          alt="Aiccelerate Logo"
-          width={240}
-          height={240}
-          className="mx-auto mb-4"
-        />
-        <p className="text-2xl gradient-rainbow">AICCELERATE</p>
-      </div>
+      <motion.div 
+        className="py-12 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          whileHover={{ 
+            scale: 1.05,
+            rotate: [0, -5, 5, -5, 0],
+            transition: {
+              rotate: {
+                duration: 0.5,
+                ease: "easeInOut",
+                repeat: 0
+              }
+            }
+          }}
+        >
+          <Image 
+            src="/LogoIcon.svg"
+            alt="Aiccelerate Logo"
+            width={240}
+            height={240}
+            className="mx-auto mb-4"
+          />
+        </motion.div>
+        <motion.p 
+          className="text-3xl gradient-rainbow pt-2"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          AICCELERATE
+        </motion.p>
+      </motion.div>
 
       {/* Footer */}
       <footer className="py-6 border-t border-white/10">
