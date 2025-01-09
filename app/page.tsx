@@ -241,7 +241,7 @@ We will achieve this through a combination of supporting the leading teams of to
         { src: "/images/dao/Mechanism.svg", alt: "Mechanism Capital", name: "Mechanism Capital" },
         { src: "/images/dao/TopologyVentures.svg", alt: "Topology Ventures", name: "Topology Ventures", 
           dimensions: { width: 70, height: 40 }} ,
-        { src: "/images/dao/arc.svg", alt: "ARC Protocol", name: "ARC" },
+        { src: "/images/dao/Arc.svg", alt: "ARC Protocol", name: "ARC" },
       ].map((partner, index) => (
         <motion.div
           key={index}
