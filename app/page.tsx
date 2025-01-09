@@ -1201,10 +1201,6 @@ export default function Home() {
               {
                 question: "What is the Aiccelerate DAO token and what is the contract address?",
                 answer: "$AICC will represent the DAO and all future initiatives. No new token will be created. The Contract Address is C3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw"
-              },
-              {
-                question: "What are the tokenomics behind the $AICC Token?",
-                answer: "Projects will be required to donate to our DAO fund in order to be considered for an investment/grant. The profits from our DAO funds will be used to buy back our $AICC token. $AICC Partners will be able to participate in a gated group chat and will also be considered for future potential airdrops. The first agent we build will also incorporate additional tokenomics/utility to the $AICC token. No new token will be created. "
               }
             ].map((faq, index) => (
               <div key={index} className="border-b border-white pb-6">
