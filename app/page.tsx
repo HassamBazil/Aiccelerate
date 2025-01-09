@@ -1075,7 +1075,7 @@ export default function Home() {
                   "Community building strategy",
                   "Token holder incentives",
                   "Partnership and collaboration potential",
-                  "Focus on impacts OUTSIDE of CT (web2 agnostic) (we want projects that can make large impacts)",
+                  "Focus on impacts OUTSIDE of CT (web2 agnostic)  (we want projects that can make large impacts)",
                   "Cross-chain/cross-platform integration"
                 ]
               },
