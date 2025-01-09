@@ -559,7 +559,7 @@ We will achieve this through a combination of supporting the leading teams of to
               {
                 name: "Aiccelerate Agent 1",
                 twitter: "@aiacceleratedao",
-                link: "",
+                link: "https://x.com/aicceleratedao",
                 description: "Research/alpha agent",
                 image: "/images/OurTeam/AIAgent.png"
               }
