@@ -49,16 +49,15 @@ export default function Home() {
   const partners = [
     { src: "/images/dao/Coinbase.svg", alt: "Coinbase", name: "Coinbase" },
     { src: "/images/dao/Google.svg", alt: "Google", name: "Google" },
-    { src: "/images/dao/Nous_Better.png", alt: "Nous Research", name: "Nous Research", dimensions: { width: 100, height: 100 } },
     { src: "/images/dao/Ai16z.svg", alt: "a16z", name: "ai16z" },
     { src: "/images/dao/VirtualsProtocol.svg", alt: "Virtuals Protocol", name: "Virtuals Protocol" },
     { src: "/images/dao/EigenLayer.svg", alt: "EigenLayer", name: "EigenLayer", dimensions: { width: 70, height: 40 }},
     { src: "/images/dao/Abstract.svg", alt: "Abstract", name: "Abstract" },
-    { src: "/images/dao/Bankless.svg", alt: "Bankless", name: "Bankless", dimensions: { width: 50, height: 40 }},
     { src: "/images/dao/StoryProtocol.svg", alt: "Story Protocol", name: "Story Protocol", dimensions: { width: 70, height: 40 }},
-    { src: "/images/dao/DelphiDigital.svg", alt: "Delphi Digital", name: "Delphi Digital" },
     { src: "/images/dao/Mechanism.svg", alt: "Mechanism Capital", name: "Mechanism Capital" },
     { src: "/images/dao/TopologyVentures.svg", alt: "Topology Ventures", name: "Topology Ventures", dimensions: { width: 70, height: 40 }},
+    { src: "/images/dao/DelphiDigital.svg", alt: "Delphi Digital", name: "Delphi Digital" },
+    { src: "/images/dao/Bankless.svg", alt: "Bankless", name: "Bankless", dimensions: { width: 50, height: 40 }},
     { src: "/images/dao/Arc.svg", alt: "ARC Protocol", name: "ARC" },
   ];
 
@@ -251,10 +250,10 @@ export default function Home() {
             </div>
           </div>
           <div className="py-2">
-            <span className="text-xl sm:text-[35px] font-prata uppercase" style={{ fontFamily: 'prata' }}>
-              Aiccelerate DAO
+            <span className="text-xl sm:text-[30px] font-prata uppercase" style={{ fontFamily: 'prata' }}>
+              Aiccelerate  &nbsp;DAO
             </span>
-          </div>
+        </div>
           <Link 
             href="https://x.com/aicceleratedao" 
             className="nav-link flex items-center md:pr-8 lg:pr-1"
@@ -293,10 +292,8 @@ export default function Home() {
             
 We are an Investment & Development DAO focused on the Crypto AI sector. Our members stem from the top open source AI teams, Coinbase, Google, and major funds.<br></br><br></br> 
 
-Our goal is twofold: accelerate the development of decentralized open source AI and invest in the most promising projects across multiple ecosystems.<br></br><br></br> 
-
-We will achieve this through a combination of supporting the leading teams of tomorrow that are building core agentic infrastructure + apps & developing + deploying agentic apps & tools of our own.
-            </p>
+Our goal is two-fold: accelerate the development of decentralized open source AI and invest in the most promising projects across multiple ecosystems.
+          </p>
             <button 
               onClick={scrollToMission}
               className="learn-more-btn px-8 py-3 text-lg border border-white hover:bg-white hover:text-black transition-all duration-300 rounded-[5px]"
@@ -328,7 +325,7 @@ We will achieve this through a combination of supporting the leading teams of to
             className="flex justify-center px-4 sm:px-8 md:px-12"
           >
             <AnimatedNumber 
-              finalValue={10000000000} 
+              finalValue={13800000000} 
               className="text-[24px] sm:text-[36px] md:text-[72px] lg:text-[96px] xl:text-[102px] font-light font-prata gradient-rainbow text-center"
               duration={5000}
             />
@@ -339,132 +336,102 @@ We will achieve this through a combination of supporting the leading teams of to
       {/* DAO Members Section */}
 
      
-      <section className="py-28 text-center">
-      <div className="mx-auto px-6">
-        <motion.h2 
-          className="text-4xl md:text-6xl font-light mb-16 section-title"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+     {/* DAO Members Section */}
+<section className="py-28 text-center">
+  <div className="mx-auto px-6">
+    {/* Title */}
+    <motion.h2 
+      className="text-3xl sm:text-4xl md:text-5xl font-light mb-16"
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      style={{ fontFamily: 'prata' }}
+    >
+      DAO with Members from
+    </motion.h2>
+
+    {/* First Row */}
+    <motion.div 
+      className="grid grid-cols-6 gap-6 lg:gap-12 max-w-6xl mx-auto mb-12"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      {partners.slice(0, 6).map((partner, index) => (
+        <motion.div
+          key={index}
+          className="flex flex-col items-center space-y-3"
+          variants={itemVariants}
+          whileHover={{ 
+            scale: 1.05,
+            transition: { duration: 0.2 }
+          }}
         >
-          DAO with Members from
-        </motion.h2>
-        
-        {/* Mobile: 3 columns, Tablet: 4 columns, Desktop: 7-6 split layout */}
-        <div className="grid grid-cols-3 md:hidden gap-6 max-w-lg mx-auto">
-          {partners.map((partner, index) => (
-            <motion.div
-              key={index}
-              className="flex flex-col items-center space-y-2"
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.05,
-                transition: { duration: 0.2 }
-              }}
-            >
-              <div className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] flex items-center justify-center">
-                <Image
-                  src={partner.src}
-                  alt={partner.alt}
-                  width={partner.dimensions?.width || 100}
-                  height={partner.dimensions?.height || 100}
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-white text-xs sm:text-sm font-light opacity-100">
-                {partner.name}
-              </span>
-            </motion.div>
-          ))}
-        </div>
+          <div className="w-[100px] h-[100px] flex items-center justify-center">
+            <Image
+              src={partner.src}
+              alt={partner.alt}
+              width={partner.dimensions?.width || 120}
+              height={partner.dimensions?.height || 120}
+              className="object-contain"
+            />
+          </div>
+          <span className="text-white text-sm font-light opacity-100">
+            {partner.name}
+          </span>
+        </motion.div>
+      ))}
+    </motion.div>
 
-        {/* Desktop layout (hidden on mobile) */}
-        <div className="hidden md:block space-y-12">
-          {/* First row - 7 logos */}
-          <motion.div 
-            className="grid grid-cols-7 gap-6 lg:gap-12 max-w-7xl mx-auto"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {partners.slice(0, 7).map((partner, index) => (
-              <motion.div
-                key={index}
-                className="flex flex-col items-center space-y-3"
-                variants={itemVariants}
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <div className="w-[100px] h-[100px] flex items-center justify-center">
-                  <Image
-                    src={partner.src}
-                    alt={partner.alt}
-                    width={partner.dimensions?.width || 120}
-                    height={partner.dimensions?.height || 120}
-                    className="object-contain"
-                  />
-                </div>
-                <span className="text-white text-sm font-light opacity-100">
-                  {partner.name}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Second row - 6 logos */}
-          <motion.div 
-            className="grid grid-cols-6 gap-6 lg:gap-12 max-w-6xl mx-auto"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {partners.slice(7).map((partner, index) => (
-              <motion.div
-                key={index + 7}
-                className="flex flex-col items-center space-y-3"
-                variants={itemVariants}
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <div className="w-[100px] h-[100px] flex items-center justify-center">
-                  <Image
-                    src={partner.src}
-                    alt={partner.alt}
-                    width={partner.dimensions?.width || 120}
-                    height={partner.dimensions?.height || 120}
-                    className="object-contain"
-                  />
-                </div>
-                <span className="text-white text-sm font-light opacity-100">
-                  {partner.name}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
-            </div>
-            
-        <motion.p 
-          className="font-400 text-2xl md:text-[30px] mt-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
+    {/* Second Row */}
+    <motion.div 
+      className="grid grid-cols-6 gap-6 lg:gap-12 max-w-6xl mx-auto mb-12"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      {partners.slice(6).map((partner, index) => (
+        <motion.div
+          key={index + 6}
+          className="flex flex-col items-center space-y-3"
+          variants={itemVariants}
+          whileHover={{ 
+            scale: 1.05,
+            transition: { duration: 0.2 }
+          }}
         >
-          AND MORE.
-        </motion.p>
-      </div>
-    </section>
+          <div className="w-[100px] h-[100px] flex items-center justify-center">
+            <Image
+              src={partner.src}
+              alt={partner.alt}
+              width={partner.dimensions?.width || 120}
+              height={partner.dimensions?.height || 120}
+              className="object-contain"
+            />
+          </div>
+          <span className="text-white text-sm font-light opacity-100">
+            {partner.name}
+          </span>
+        </motion.div>
+      ))}
+    </motion.div>
 
+    {/* AND MORE text */}
+    <motion.p
+      className="text-2xl sm:text-3xl md:text-4xl font-light mt-16 text-gray-300"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+      viewport={{ once: true }}
+      style={{ fontFamily: 'Barlow Semi Condensed' }}
+    >
+      AND MORE.
+    </motion.p>
+  </div>
+</section>
 
       <section className="relative overflow-hidden section-container" id='mission-section'>
 <div className="container mx-auto px-4 sm:px-6 md:px-40">
@@ -494,12 +461,10 @@ We will achieve this through a combination of supporting the leading teams of to
               Accelerate Crypto AI development with a concentrated effort on the Agent Sector. This mission extends beyond any single blockchain or ecosystem, this DAO will be chain-agnostic, with a hyper-focused belief that agents will be the ultimate power users & consumers of ALL blockchains. </p>
               
               <p>
-              We will leverage our extensive network, product investment & engineering expertise to support both the most exciting projects and open source initiatives across ecosystems.   </p>
-
-              <p>
-              We believe an open source ethos is critical for achieving decentralized AGI. <br></br>Our support will also include further investments, networking & raising awareness of the across teams.
+              We will leverage our extensive network, product investment & engineering expertise to support both the most exciting projects and open source initiatives across ecosystems. We believe an open source ethos is critical for achieving decentralized AGI. <br></br><br></br>Our support will also include further investments, networking & raising awareness of the across teams.
               </p>
 
+             
               <p>
               In addition to this, we will design & build agents that we believe will empower the space & further our cause. We do not believe in sitting around & waiting for the future to happen, we will build it. </p>
 
@@ -797,7 +762,7 @@ We will achieve this through a combination of supporting the leading teams of to
               viewport={{ once: true }}
             >
               <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>
-                Media Outreach
+                Outreach
               </h3>
             </motion.div>
 
@@ -836,44 +801,33 @@ We will achieve this through a combination of supporting the leading teams of to
         
       </section>
 
+      {/* Robot Hand Transition */}
+      <motion.div 
+        className="relative w-full h-[300px] overflow-visible -mt-32 -mb-32 hidden md:block"
+        initial={{ opacity: 0, x: -100, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+        viewport={{ once: true }}
+        transition={{ 
+          duration: 1.2,
+          type: "spring",
+          stiffness: 50,
+          damping: 15
+        }}
+      >
+        <Image
+          src="/images/robohandnew.png"
+          alt="Robotic Hand"
+          width={500}
+          height={500}
+          className="absolute left-0 top-0 w-[500px] h-auto" 
+          style={{ top: '-50px' }}
+        />
+      </motion.div>
+
       {/* Background Section */}
       <section className="relative overflow-hidden section-container">
-        {/* Robot Hand Top Left */}
-        <motion.div 
-          className="absolute -top-28 left-0 w-[500px] opacity-100 pointer-events-none hidden md:block"
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
-          <Image
-            src="/images/robohandnew.png"
-            alt="Robotic Hand"
-            width={500}
-            height={500}
-            className="w-full h-auto"
-          />
-        </motion.div>
-
-        {/* Human Hand Right */}
-        <motion.div 
-          className="absolute top-2 right-0 w-[500px] opacity-100 pointer-events-none hidden md:block"
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.4 }}
-        >
-          <Image
-            src="/images/GoodHandnew.png"
-            alt="Human Hand Right"
-            width={500}
-            height={500}
-            className="w-full h-auto"
-          />
-        </motion.div>
-
         {/* Content */}
-        <div className="container mx-auto px-4 sm:px-6 md:px-40 mt-52">
+        <div className="container mx-auto px-4 sm:px-6 md:px-40 mt-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-24 items-start">
             {/* Title with Parallax */}
             <motion.div 
@@ -914,40 +868,48 @@ We will achieve this through a combination of supporting the leading teams of to
         </div>
       </section>
 
+      {/* Human Hand Transition */}
+      <motion.div 
+        className="relative w-full h-[300px] overflow-visible -mt-32 -mb-32 hidden md:block"
+        initial={{ opacity: 0, x: 100, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+        viewport={{ once: true }}
+        transition={{ 
+          duration: 1.2,
+          type: "spring",
+          stiffness: 50,
+          damping: 15
+        }}
+      >
+        <Image
+          src="/images/GoodHandnew.png"
+          alt="Human Hand Right"
+          width={500}
+          height={500}
+          className="absolute right-0 top-0 w-[500px] h-auto" 
+          style={{ top: '-180px' }}
+        />
+      </motion.div>
+
       {/* Tokenomics Section */}
       <section className="relative overflow-hidden section-container">
         {/* Token Image */}
-        <div className="flex justify-center mt-20 mb-8 relative z-10">
-          <motion.div   
-            style={{ marginTop: '-100px', marginBottom: '-100px' }}
-            className="w-[420px] h-[465px] relative"
-            initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <Image
-              src="/images/Token.png"
-              alt="Token"
-              width={420}
-              height={465}
-              className="w-full h-full object-contain"
-              style={{ position: 'relative', zIndex: 10 }}
-            />
-          </motion.div>
-        </div>
+       
 
         {/* Content */}
         <div className="container mx-auto px-4 sm:px-6 md:px-40">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-24 items-start">
             {/* Title with Parallax */}
             <motion.div 
-              className="sticky col-span-1 md:col-span-3 mb-8 md:mb-0"
+              className={`
+                col-span-1 md:col-span-3 mb-8 md:mb-0 title-container
+                static md:sticky top-32
+              `}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               style={{ 
-                zIndex: 50,
+                zIndex: 40,
                 background: 'none'
               }}
             >
@@ -987,7 +949,7 @@ We will achieve this through a combination of supporting the leading teams of to
       </section>
 
       {/* Details Section */}
-      <section className="pt-32">
+      <section className="pt-1">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div
             className="overflow-hidden"
@@ -1045,9 +1007,20 @@ We will achieve this through a combination of supporting the leading teams of to
           {/* Human Component */}
           <section className="relative overflow-hidden section-container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32 relative">
-              <motion.div className="relative w-full h-[600px] -top-20 -z-10">
+              <motion.div 
+                className="relative w-full h-[600px] -top-10 -z-10"
+                initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 1,
+                  type: "spring",
+                  stiffness: 40,
+                  damping: 20
+                }}
+              >
                 <Image
-                  src="/images/Human 1.png"
+                  src="/images/GenericHuman_Better.png"
                   alt="Human Component"
                   width={500}
                   height={600}
@@ -1086,7 +1059,18 @@ We will achieve this through a combination of supporting the leading teams of to
           {/* Agent Component */}
           <section className="relative overflow-hidden section-container pt-28">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div className="relative w-full h-[600px] order-1">
+              <motion.div 
+                className="relative w-full h-[600px] order-1"
+                initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 1,
+                  type: "spring",
+                  stiffness: 40,
+                  damping: 20
+                }}
+              >
                 <Image
                   src="/images/GoodRobot2.png"
                   alt="Agent Component"
