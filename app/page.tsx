@@ -49,7 +49,7 @@ export default function Home() {
   const partners = [
     { src: "/images/dao/Coinbase.svg", alt: "Coinbase", name: "Coinbase" },
     { src: "/images/dao/Google.svg", alt: "Google", name: "Google" },
-    { src: "/images/dao/Ai16z.svg", alt: "a16z", name: "ai16z" },
+    { src: "/images/dao/Ai16z.svg", alt: "a16z", name: "Ai16z" },
     { src: "/images/dao/VirtualsProtocol.svg", alt: "Virtuals Protocol", name: "Virtuals Protocol" },
     { src: "/images/dao/EigenLayer.svg", alt: "EigenLayer", name: "EigenLayer", dimensions: { width: 70, height: 40 }},
     { src: "/images/dao/Abstract.svg", alt: "Abstract", name: "Abstract" },
