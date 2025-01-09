@@ -990,8 +990,7 @@ export default function Home() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   style={{ 
-                    zIndex: 40,
-                    background: 'linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0))'
+                    zIndex: 40
                   }}
                 >
                   <h2 className="section-title text-4xl sm:text-5xl md:text-7xl font-light text-center md:text-left pb-8" style={{ fontFamily: 'Barlow Semi Condensed' }}>
@@ -1076,7 +1075,7 @@ export default function Home() {
                   "Community building strategy",
                   "Token holder incentives",
                   "Partnership and collaboration potential",
-                  "Focus on impacts OUTSIDE of CT (web2 agnostic) (we want projects that can make large impacts)",
+                  "Focus on impacts OUTSIDE of CT (web2 agnostic)(we want projects that can make large impacts)",
                   "Cross-chain/cross-platform integration"
                 ]
               },
