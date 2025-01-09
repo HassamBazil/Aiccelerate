@@ -41,24 +41,44 @@ const EmailSubscribe = () => {
   };
 
   return (
-    <div className="py-32 text-center">
+    <div className="py-26 text-center">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 30, filter: "blur(5px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="max-w-md mx-auto px-4"
       >
-        <div className="flex justify-center">
-          <h3 className="text-4xl sm:text-5xl md:text-[64px] mb-4 font-light whitespace-nowrap">
+        <motion.div 
+          className="flex justify-center"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-4xl sm:text-5xl md:text-[64px] mb-6 font-light whitespace-nowrap">
             Stay Up-to-Date
           </h3>
-        </div>
-        <p className="text-white mb-6 text-[18px] uppercase">
-          Subscribe to receive updates about Aiccelerate DAO
-        </p>
+        </motion.div>
         
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+        <motion.p 
+          className="text-white mb-7 text-[18px] uppercase"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          Subscribe to our mailing list for updates
+        </motion.p>
+        
+        <motion.form 
+          onSubmit={handleSubmit} 
+          className="flex flex-col sm:flex-row gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           <input
             type="email"
             value={email}
@@ -70,11 +90,11 @@ const EmailSubscribe = () => {
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="px-8 py-3 border border-white hover:bg-white hover:text-black transition-all duration-300 rounded-[5px] disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-8 py-3 bg-white text-black hover:bg-transparent hover:text-white border border-white transition-all duration-300 rounded-[5px] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
           </button>
-        </form>
+        </motion.form>
         
         {status === 'success' && (
           <p className="mt-4 text-green-400">Thank you for subscribing!</p>

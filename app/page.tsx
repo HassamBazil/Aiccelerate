@@ -1,6 +1,6 @@
 "use client";
 
-import { AlignCenter, Twitter } from 'lucide-react';
+import { AlignCenter, Network, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import TextScramble from "@/components/ui/TextScramble";
@@ -290,9 +290,9 @@ export default function Home() {
             
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             
-We are an Investment & Development DAO focused on the Crypto AI sector. Our members stem from the top open source AI teams, Coinbase, Google, and major funds.<br></br><br></br> 
+            We are an Investment & Development DAO focused on the Crypto AI sector. Our members stem from the top open source AI teams, Coinbase, Google, and major funds. <br></br><br></br> 
 
-Our goal is two-fold: accelerate the development of decentralized open source AI and invest in the most promising projects across multiple ecosystems.
+            Our goal is two-fold: accelerate the development of decentralized open source AI, and invest in the most promising projects across multiple ecosystems. 
           </p>
             <button 
               onClick={scrollToMission}
@@ -351,25 +351,25 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
       DAO with Members from
     </motion.h2>
 
-    {/* First Row */}
+    {/* DAO Members Grid */}
     <motion.div 
-      className="grid grid-cols-6 gap-6 lg:gap-12 max-w-6xl mx-auto mb-12"
+      className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 max-w-6xl mx-auto mb-12 px-4"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
     >
-      {partners.slice(0, 6).map((partner, index) => (
+      {partners.map((partner, index) => (
         <motion.div
           key={index}
-          className="flex flex-col items-center space-y-3"
+          className="flex flex-col items-center space-y-4"
           variants={itemVariants}
           whileHover={{ 
             scale: 1.05,
             transition: { duration: 0.2 }
           }}
         >
-          <div className="w-[100px] h-[100px] flex items-center justify-center">
+          <div className="w-[70px] sm:w-[90px] md:w-[100px] h-[70px] sm:h-[90px] md:h-[100px] flex items-center justify-center">
             <Image
               src={partner.src}
               alt={partner.alt}
@@ -378,41 +378,7 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
               className="object-contain"
             />
           </div>
-          <span className="text-white text-sm font-light opacity-100">
-            {partner.name}
-          </span>
-        </motion.div>
-      ))}
-    </motion.div>
-
-    {/* Second Row */}
-    <motion.div 
-      className="grid grid-cols-6 gap-6 lg:gap-12 max-w-6xl mx-auto mb-12"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      {partners.slice(6).map((partner, index) => (
-        <motion.div
-          key={index + 6}
-          className="flex flex-col items-center space-y-3"
-          variants={itemVariants}
-          whileHover={{ 
-            scale: 1.05,
-            transition: { duration: 0.2 }
-          }}
-        >
-          <div className="w-[100px] h-[100px] flex items-center justify-center">
-            <Image
-              src={partner.src}
-              alt={partner.alt}
-              width={partner.dimensions?.width || 120}
-              height={partner.dimensions?.height || 120}
-              className="object-contain"
-            />
-          </div>
-          <span className="text-white text-sm font-light opacity-100">
+          <span className="text-white text-[11px] sm:text-sm font-light opacity-100">
             {partner.name}
           </span>
         </motion.div>
@@ -421,7 +387,7 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
 
     {/* AND MORE text */}
     <motion.p
-      className="text-2xl sm:text-3xl md:text-4xl font-light mt-16 text-gray-300"
+      className="text-2xl sm:text-3xl md:text-4xl font-light mt-16 text-white-300"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}
@@ -458,22 +424,19 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
             {/* Content */}
             <div className="col-span-1 md:col-span-7 md:col-start-5 space-y-6 md:space-y-8 text-base sm:text-lg md:text-[20px] text-gray-300 px-4 md:px-0 md:ml-20">
               <p>
-              Accelerate Crypto AI development with a concentrated effort on the Agent Sector. This mission extends beyond any single blockchain or ecosystem, this DAO will be chain-agnostic, with a hyper-focused belief that agents will be the ultimate power users & consumers of ALL blockchains. </p>
+              We will accelerate Crypto AI development with a concentrated effort on the Agent Sector. This mission extends beyond any single blockchain or ecosystem, this DAO will be chain-agnostic, with a hyper-focused belief that agents will be the ultimate power users & consumers of ALL blockchains. </p>
               
               <p>
-              We will leverage our extensive network, product investment & engineering expertise to support both the most exciting projects and open source initiatives across ecosystems. We believe an open source ethos is critical for achieving decentralized AGI. <br></br><br></br>Our support will also include further investments, networking & raising awareness of the across teams.
+              We will also leverage our extensive network, product investment & engineering expertise to support both the most exciting projects and open source initiatives. We believe an open source ethos is critical for achieving decentralized AGI.  <br></br><br></br>Our support will also include further investments, networking & raising awareness of the best teams.
               </p>
 
              
               <p>
-              In addition to this, we will design & build agents that we believe will empower the space & further our cause. We do not believe in sitting around & waiting for the future to happen, we will build it. </p>
+              In addition to this, we will house a community of leading developers (multi-framework aligned) that will build an array of agents & tools that will further our cause. We do not believe in sitting around & waiting for the future to happen, we will build it. </p>
 
               <p>
-              Our first agent will be a research agent specifically tailored to decentralized AI. It will not only source potential investments but diligence them & aid the investment team and the overall market.
-              </p>
+              Aiccelerate DAO and all its initiatives unite under a single token: $AICC. Contract Address: C3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw</p>
 
-              <p>
-              Aiccelerate DAO and all its initiatives will unite under a single token: $AICC.  </p>
             </div>
           </div>
         </div>
@@ -500,7 +463,7 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
           
           <motion.div 
           style={{fontFamily: 'Barlow Semi Condensed'}}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -540,12 +503,12 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
                   rel="noopener noreferrer"
                   className="group cursor-pointer"
                 >
-                  <div className="h-[60px] mb-6" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                  <div className="h-[50px] mb-4" style={{ fontFamily: 'Barlow Semi Condensed' }}>
                     <div className="flex items-center justify-between">
-                      <h3 className="text-2xl font-light leading-tight whitespace-nowrap text-left">
+                      <h3 className="text-xl font-light leading-tight whitespace-nowrap text-left">
                         {member.name}
                       </h3>
-                      <Twitter size={20} className="text-gray-400 group-hover:text-white transition-colors" />
+                      <Twitter size={16} className="text-gray-400 group-hover:text-white transition-colors" />
                     </div>
                   </div>
 
@@ -557,14 +520,14 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={130}
-                      height={126}
+                      width={120}
+                      height={120}
                       className="w-full h-full object-cover"
                       quality={100}
                     />
                   </motion.div>
 
-                  <p className="text-gray-300 text-base leading-relaxed text-left">
+                  <p className="text-gray-300 text-sm leading-relaxed text-left">
                     {member.description}
                   </p>
                 </Link>
@@ -844,16 +807,14 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
             {/* Content */}
             <div className="col-span-1 md:col-span-7 md:col-start-5 space-y-6 md:space-y-8 text-base sm:text-lg md:text-[20px] text-gray-300 px-4 md:px-0 md:ml-20">
               <p>
-              There are liquid markets that current venture capital firms are unable to tap into. Several legitimate teams are choosing fair launch models such as pumpfun, daosfun, and others. </p>
-              
-              <p>
-              It has become impossible to chase every individual project across every platform, so we are looking to leverage our network to become the <b></b>one stop shop for builders and investors.  </p>
+              There are liquid markets that current venture capital firms are unable to tap into. Several legitimate teams are choosing fair launch models such as Pumpfun, Daosfun, and others.
+             </p>
+             <p>
+              It has become impossible to chase every individual project across every platform so we will look to leverage our extensive network, product & investment experience to become the <b>home</b>  for the leading <b>builders </b>and <b>investors</b> of tomorrow.  </p>
 
               <p>
-              We are abstracting away the hard work for teams by providing a suite of funding, networking and raising awareness–thereby supporting projects that reach out and donate to us.   </p>
-
-              <p>
-              We aim to become both an investment DAO and a development DAO by fusing elements of both a human and agentic component. We plan to ship an array of agents that can elevate the space. Our first project is a public utility research agent that can help us, and the overall market make better judgement calls.  </p>
+              We aim to become both an <b>Investment DAO</b> and a <b>Development DAO</b> by fusing elements of both a <b>human</b> and <b>agentic</b> component. We plan to ship an array of agents that can elevate the space. Our first project is a public utility research agent that can help us, and the overall market make better judgement calls.
+              </p>
 
             
             </div>
@@ -880,66 +841,11 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
           width={500}
           height={500}
           className="absolute right-0 top-0 w-[500px] h-auto" 
-          style={{ top: '-180px' }}
+          style={{ top: '-240px' }}
         />
       </motion.div>
 
-      {/* Tokenomics Section */}
-      <section className="relative overflow-hidden section-container">
-        {/* Token Image */}
-       
-
-        {/* Content */}
-        <div className="container mx-auto px-4 sm:px-6 md:px-40">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-24 items-start">
-            {/* Title with Parallax */}
-            <motion.div 
-              className={`
-                col-span-1 md:col-span-3 mb-8 md:mb-0 title-container
-                static md:sticky top-32
-              `}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              style={{ 
-                zIndex: 40,
-                background: 'none'
-              }}
-            >
-              <h2 className="section-title text-4xl sm:text-5xl md:text-7xl font-light text-center md:text-left">
-                Tokenomics
-              </h2>
-            </motion.div>
-
-            {/* Content */}
-            <div className="col-span-1 md:col-span-7 md:col-start-5 space-y-6 md:space-y-8 text-base sm:text-lg md:text-[20px] text-gray-300 px-4 md:px-0 md:ml-20">
-              <p>
-                Aiccelerate DAO and all its initiatives will have a single token: $AICC. No new token will be created
-              </p>
-
-              <p>
-                All our agents will funnel value back into the $AICC token as we incorporate utility/tokenomics to them.
-              </p>
-
-              <p>
-                Projects will be required to donate to our DAO fund in order to be considered for an investment/grant.
-              </p>
-
-              <p>
-                100K tokens will be required to become a partner which will give you access to a gated group chat and the use of our agent.
-              </p>
-
-              <p>
-                Our token holders will receive benefits in the form of future potential airdrops and exclusive investment opportunities.
-              </p>
-
-              <p>
-                In addition to this, as our AUM grows, we will use a percentage of our profits to buy back our token, essentially enabling the Accelerate DAO token $AICC to become the Crypto x AI index.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Details Section */}
       <section className="pt-1">
@@ -1050,7 +956,7 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
           </section>
 
           {/* Agent Component */}
-          <section className="relative overflow-hidden section-container pt-28">
+          <section className="relative overflow-hidden section-container pt-18">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <motion.div 
                 className="relative w-full h-[600px] order-1"
@@ -1076,30 +982,30 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
               <motion.div className="flex flex-col justify-center space-y-6 order-2">
                 {/* Title with Parallax */}
                 <motion.div 
-                  className="sticky col-span-1 md:col-span-3 mb-8 md:mb-0"
+                  className={`
+                    sticky col-span-1 md:col-span-3 mb-8 md:mb-0
+                    static md:sticky top-24
+                  `}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   style={{ 
-                    background: 'none'
+                    zIndex: 40,
+                    background: 'linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0))'
                   }}
                 >
-                  <h2 className="section-title text-4xl sm:text-5xl md:text-7xl font-light text-center md:text-left" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                  <h2 className="section-title text-4xl sm:text-5xl md:text-7xl font-light text-center md:text-left pb-8" style={{ fontFamily: 'Barlow Semi Condensed' }}>
                     Agent
                   </h2>
                 </motion.div>
                 <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
-                Due to the high velocity of AI projects launching, our first agent is a research agent with wide analysis across several different data feeds and custom metrics. A donation of 1% to our DAO would trigger it to provide research on the project that donated.
-                </p>
+                Due to the high velocity of AI projects launching, our first agent is a research agent with wide analysis across several different data feeds and custom metrics. A donation to our DAO would trigger it to provide research on the project that donated (subject to change).</p>
                 <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
-                A donation would not guarantee a good review, as the agent would evaluate the project with our AGENT Project Analysis Framework. This ensures that only projects that all project analysis is standardized with a baseline that is not tampered by human bias.
-                </p>
+                A donation would not guarantee a good review, as the agent would evaluate the project with our AGENT Project Analysis Framework. This ensures that only projects that all project analysis is standardized with a baseline that is not tampered by human bias. </p>
                 <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
-                We believe that a research agent with concrete analysis backed by a DAO with a strong social network is what's necessary to ensure its success. This will provide social credibility that can further amplify its reach.
-                </p>
+                We believe that a research agent with concrete analysis backed by a <b>DAO with a strong social network</b> is what’s necessary to ensure its success. This will provide social credibility that can further amplify its reach.</p>
                 <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
-                Our DAO plans to build and incubate an array of agents and tools that can provide value to the space.
-                </p>
+                This will be the first of many agents that we will ship. </p>
               </motion.div>
             </div>
           </section>
@@ -1134,6 +1040,7 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
                 letter: "A",
                 title: "Architecture & AI Integration",
                 items: [
+
                   "How deeply is AI integrated into the core product?",
                   "What type of AI models/systems are being used?",
                   "Is the AI integration necessary or superficial?",
@@ -1146,10 +1053,12 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
                 items: [
                   "DAO structure and/or voting mechanisms?",
                   "Token distribution and presale structure",
-                  "Growth metrics and community management",
-                  "Marketing strategy and partnership potential with large players/brands/etc"
+                  "Growth metrics and community engagement",
+                  "Marketing strategy and partnership potential with large players in/outside CT"
                 ]
               },
+                
+              
               {
                 letter: "E",
                 title: "Execution Team",
@@ -1167,7 +1076,7 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
                   "Community building strategy",
                   "Token holder incentives",
                   "Partnership and collaboration potential",
-                  "Focus on impact OUTSIDE of CT (we want projects that can invite large impact)",
+                  "Focus on impacts OUTSIDE of CT (web2 agnostic) (we want projects that can make large impacts)",
                   "Cross-chain/cross-platform integration"
                 ]
               },
@@ -1177,8 +1086,8 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
                 items: [
                   "Unique technological advantages / features",
                   "Open source vs. proprietary components",
-                  "Research and development roadmap"
-                ]
+                  "Research and development roadmap",
+                 ]
               }
             ].map((section, index) => (
               <motion.div
@@ -1270,6 +1179,7 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
         </motion.div>
       </section>
 
+
       {/* FAQs Section */}
       <section className="py-32">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
@@ -1287,11 +1197,11 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
               },
               {
                 question: "How can a team apply for support?",
-                answer: "We welcome applications from all projects via a donation of 1% to our DAO. This will lead to a research report generated by our agent which will be sent to our DAO partners. If you are a pre-launch project, reach out to us at aicceleratedao@gmail.com"
+                answer: "We welcome applications from all new launch projects via a donation to our DAO (Subject to change). This will lead to a research report generated by our agent which will be sent to our DAO partners. If you are a pre-launch project or an already established project, reach out to us at aicceleratedao@gmail.com"
               },
               {
                 question: "What is the Aiccelerate DAO token and what is the contract address?",
-                answer: "The aiccelerate DAO token is $AICC. The contract address will be revealed soon on our Twitter."
+                answer: "$AICC will represent the DAO and all future initiatives. No new token will be created. The Contract Address is C3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw"
               },
               {
                 question: "What are the tokenomics behind the $AICC Token?",
@@ -1333,30 +1243,46 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
         >
           <motion.h2 
             className="text-7xl font-light mb-16 section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
             Contact Us
           </motion.h2>
 
-          <div className="flex flex-col items-center space-y-4">
-            <Link 
-              href="https://twitter.com/aiacceleratedao"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full max-w-[200px] px-8 py-4 border border-white/20 rounded hover:bg-white/5 transition-all duration-300"
+          <div className="flex flex-col items-center space-y-14 " >
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              style={{width: '300px'}} 
             >
-              Twitter
-            </Link>
 
-            <Link 
-              href="mailto:aicceleratedao@gmail.com"
-              className="w-full max-w-[200px] px-8 py-4 border border-white/20 rounded hover:bg-white/5 transition-all duration-300"
+              <Link 
+                href="https://x.com/aicceleratedao"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full max-w-[200px] px-12 py-4 border border-white/20 rounded hover:bg-white/5 transition-all duration-300"
+              >
+                Twitter
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
             >
-              Email
-            </Link>
+              <Link 
+                href="mailto:aicceleratedao@gmail.com"
+                className="w-full max-w-[200px] px-12 py-4 border border-white/20 rounded hover:bg-white/5 transition-all duration-300"
+              >
+                Email
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </section>
@@ -1368,13 +1294,21 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
 
       {/* Footer Logo */}
       <motion.div 
-        className="py-12 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        className="py-8 text-center"
+        initial={{ opacity: 0, y: 30, filter: "blur(5px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
         <motion.div
+          initial={{ scale: 0.8, rotate: -10 }}
+          whileInView={{ scale: 1, rotate: 0 }}
+          transition={{ 
+            duration: 0.8, 
+            type: "spring",
+            stiffness: 100,
+            damping: 15
+          }}
           whileHover={{ 
             scale: 1.05,
             rotate: [0, -5, 5, -5, 0],
@@ -1397,9 +1331,9 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
         </motion.div>
         <motion.p 
           className="text-3xl gradient-rainbow pt-2"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
           AICCELERATE
