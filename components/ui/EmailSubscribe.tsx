@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { AlignCenter } from 'lucide-react';
 
 const EmailSubscribe = () => {
   const [email, setEmail] = useState('');
@@ -40,7 +41,7 @@ const EmailSubscribe = () => {
   };
 
   return (
-    <div className="py-16 text-center">
+    <div className="py-32 text-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,8 +49,14 @@ const EmailSubscribe = () => {
         transition={{ duration: 0.6 }}
         className="max-w-md mx-auto px-4"
       >
-        <h3 className="text-2xl mb-4 font-light">Stay Updated</h3>
-        <p className="text-gray-400 mb-6">Subscribe to receive updates about Aiccelerate DAO</p>
+        <div className="flex justify-center">
+          <h3 className="text-4xl sm:text-5xl md:text-[64px] mb-4 font-light whitespace-nowrap">
+            Stay Up-to-Date
+          </h3>
+        </div>
+        <p className="text-white mb-6 text-[18px] uppercase">
+          Subscribe to receive updates about Aiccelerate DAO
+        </p>
         
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
           <input

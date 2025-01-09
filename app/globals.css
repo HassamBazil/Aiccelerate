@@ -63,7 +63,7 @@ h2, h3 {
 
 .scramble-text .dud {
   opacity: 0.6;
-  color: #ff007f; /* Optional color for scrambling characters */
+  color: white; /* Optional color for scrambling characters */
 }
 
 .faq-section h3 {
@@ -212,4 +212,13 @@ main {
 }
 
 /* Add this script to your layout.tsx */
+
+@layer base {
+  .font-proto-mono {
+    font-family: var(--font-proto-mono);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
 

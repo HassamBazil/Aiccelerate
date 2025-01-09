@@ -1,11 +1,23 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Prata } from 'next/font/google';
+import { Prata, Space_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 
 const prata = Prata({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-prata',
+});
+
+const monoFont = Space_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-mono',
+});
+
+const protoMono = localFont({
+  src: '../public/fonts/ProtoMono-SemiBold.ttf',
+  variable: '--font-proto-mono'
 });
 
 export const metadata: Metadata = {
@@ -27,18 +39,41 @@ export default function RootLayout({
         />
         <link rel="icon" href="/Logo.jpeg" sizes="any" />
       </head>
-      <body className={`${prata.variable} ...other classes`}>
+      <body className={`${prata.variable} ${protoMono.variable} ...other classes`}>
         {children}
         <script type="module" dangerouslySetInnerHTML={{
           __html: `
             import { animate, scroll } from 'https://cdn.skypack.dev/motion'
             
-            document.querySelectorAll(".section-container").forEach((section) => {
-              const header = section.querySelector(".section-title")
-              scroll(animate(header, { y: [-100, 100] }, { ease: "linear" }), {
-                target: header,
-              })
-            })
+            const updateParallaxAndStyles = () => {
+              const titleContainers = document.querySelectorAll('.title-container');
+              
+              if (window.innerWidth >= 768) { // md breakpoint
+                // Enable parallax
+                document.querySelectorAll(".section-container").forEach((section) => {
+                  const header = section.querySelector(".section-title")
+                  scroll(animate(header, { y: [-150, 150] }, { ease: "linear" }), {
+                    target: header,
+                  })
+                });
+                
+                // Add background gradient for larger screens
+                titleContainers.forEach(container => {
+                  container.style.background = 'linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0))';
+                });
+              } else {
+                // Remove parallax and background effects for mobile
+                titleContainers.forEach(container => {
+                  container.style.background = 'none';
+                });
+              }
+            }
+
+            // Initial setup
+            updateParallaxAndStyles();
+            
+            // Update on resize
+            window.addEventListener('resize', updateParallaxAndStyles);
           `
         }} />
       </body>

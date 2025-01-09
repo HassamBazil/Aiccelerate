@@ -99,13 +99,13 @@ const TextScramble = ({ textParts, hoverTextParts }: TextScrambleProps) => {
   };
 
   return (
-    <div className="scramble-text space-y-2">
+    <div className="scramble-text space-y-2 text-center">
       {displayedText.map((text, lineIndex) => (
         <div key={lineIndex} className="leading-tight">
           {text.split(' ').map((word, wordIndex) => (
             <span key={`${lineIndex}-${wordIndex}`} className="inline-block">
               <span
-                className="cursor-pointer transition-colors hover:text-purple-400"
+                className="cursor-pointer transition-colors"
                 onMouseEnter={() => setHoveredWord({ line: lineIndex, word: wordIndex })}
                 onMouseLeave={() => handleWordLeave(lineIndex, wordIndex, textParts[lineIndex].split(' ')[wordIndex])}
               >
