@@ -715,24 +715,18 @@ We will achieve this through a combination of supporting the leading teams of to
             <div className="hidden lg:block">
               {/* First Row */}
               <div className="flex justify-center mb-8">
-                <div className="grid grid-cols-5 gap-8" style={{ width: '80%' }}>
-                  {investmentAdvisors.slice(0, 5).map((advisor, index) => (
+                <div className="grid grid-cols-3 gap-8" style={{ width: '45%' }}>
+                  {investmentAdvisors.slice(0, 3).map((advisor, index) => (
                     <ProfileCard key={index} advisor={advisor} index={index} />
                   ))}
                 </div>
               </div>
 
-              {/* Second Row - Single Card Centered */}
+              {/* Second Row */}
               <div className="flex justify-center">
-                <div 
-                  className="grid gap-8"
-                  style={{
-                    gridTemplateColumns: "minmax(0, 1fr)",
-                    width: "16%" // 80% / 5 = 16% for one card width
-                  }}
-                >
-                  {investmentAdvisors.slice(5).map((advisor, index) => (
-                    <ProfileCard key={index + 5} advisor={advisor} index={index + 5} />
+                <div className="grid grid-cols-3 gap-8" style={{ width: '45%' }}>
+                  {investmentAdvisors.slice(3).map((advisor, index) => (
+                    <ProfileCard key={index + 3} advisor={advisor} index={index + 3} />
                   ))}
                 </div>
               </div>
