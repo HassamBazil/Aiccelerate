@@ -233,7 +233,7 @@ export default function Home() {
   return (
     <main className="min-h-screen relative">
       {/* Navigation */}
-      <nav className={`fixed w-full px-4 sm:px-6 py-4 z-50 transition-all duration-300 ${
+      <nav className={`fixed w-full px-4 sm:px-6 py-8 z-50 transition-all duration-300 ${
         scrolled ? 'bg-black/80 backdrop-blur-sm' : ''
       }`}>
         <div className="container mx-auto flex justify-between items-center max-w-7xl">
@@ -250,11 +250,11 @@ export default function Home() {
               />
             </div>
           </div>
-          <div>
+          <div className="py-2">
             <span className="text-xl sm:text-[35px] font-prata uppercase" style={{ fontFamily: 'prata' }}>
               Aiccelerate DAO
             </span>
-        </div>
+          </div>
           <Link 
             href="https://x.com/aicceleratedao" 
             className="nav-link flex items-center md:pr-8 lg:pr-1"
@@ -280,7 +280,7 @@ export default function Home() {
         {/* Overlay with gradient fade */}
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/50 via-black/50 to-black" />
         
-        <div className="container mx-auto px-4 sm:px-6 relative z-20">
+        <div className="container mx-auto px-4 sm:px-6 relative z-20 pt-20">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-tight">
               <TextScramble
@@ -325,11 +325,11 @@ We will achieve this through a combination of supporting the leading teams of to
           <motion.div 
             variants={fadeInUp} 
             style={{ fontFamily: 'prata' }}
-            className="flex justify-center"
+            className="flex justify-center px-4 sm:px-8 md:px-12"
           >
             <AnimatedNumber 
               finalValue={10000000000} 
-              className="text-[27px] sm:text-[40px] md:text-[80px] lg:text-[120px] font-light font-prata gradient-rainbow text-center"
+              className="text-[24px] sm:text-[36px] md:text-[72px] lg:text-[96px] xl:text-[102px] font-light font-prata gradient-rainbow text-center"
               duration={5000}
             />
           </motion.div>
@@ -900,7 +900,7 @@ We will achieve this through a combination of supporting the leading teams of to
               There are liquid markets that current venture capital firms are unable to tap into. Several legitimate teams are choosing fair launch models such as pumpfun, daosfun, and others. </p>
               
               <p>
-              It has become impossible to chase every individual project across every platform, so we are looking to leverage our network to become the one stop shop for builders and investors.  </p>
+              It has become impossible to chase every individual project across every platform, so we are looking to leverage our network to become the <b></b>one stop shop for builders and investors.  </p>
 
               <p>
               We are abstracting away the hard work for teams by providing a suite of funding, networking and raising awareness–thereby supporting projects that reach out and donate to us.   </p>
@@ -919,7 +919,7 @@ We will achieve this through a combination of supporting the leading teams of to
         {/* Token Image */}
         <div className="flex justify-center mt-20 mb-8 relative z-10">
           <motion.div   
-            style={{ marginTop: '-80px', marginBottom: '-100px' }}
+            style={{ marginTop: '-100px', marginBottom: '-100px' }}
             className="w-[420px] h-[465px] relative"
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
