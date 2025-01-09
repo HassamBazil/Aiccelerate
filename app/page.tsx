@@ -9,6 +9,14 @@ import AnimatedNumber from '@/components/ui/AnimatedNumber';
 import { motion } from 'framer-motion';
 import EmailSubscribe from '@/components/ui/EmailSubscribe';
 
+interface Advisor {
+  name: string;
+  role: string;
+  twitter: string;
+  link: string;
+  image: string;
+}
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -165,7 +173,7 @@ export default function Home() {
       });
     }
   };  
-  const ProfileCard = ({ advisor, index }) => (
+  const ProfileCard = ({ advisor, index }: { advisor: Advisor; index: number }) => (
     <motion.div
       className="flex flex-col"
       initial={{ 
