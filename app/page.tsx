@@ -430,7 +430,7 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
     >
       AND MORE.
     </motion.p>
-  </div>
+            </div>
 </section>
 
       <section className="relative overflow-hidden section-container" id='mission-section'>
@@ -495,12 +495,12 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Our Core Team
+            Core Team
           </motion.h2>
           
           <motion.div 
           style={{fontFamily: 'Barlow Semi Condensed'}}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-5xl mx-auto "
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -527,13 +527,6 @@ Our goal is two-fold: accelerate the development of decentralized open source AI
                 link: "https://x.com/ropirito",
                 description: "Researcher In-Residence @ Nous Research, AI Engineer in Finance & Healthcare Industries. Deployed @God, @s8n, @ropairito & @tee_hee_he. MBA Chicago Booth.",
                 image: "/images/OurTeam/Ropitoro.jpg"
-              },
-              {
-                name: "AI Agent 1",
-                twitter: "@aiacceleratedao",
-                link: "https://x.com/aicceleratedao",
-                description: "Research/alpha agent",
-                image: "/images/OurTeam/AIAgent.png"
               }
             ].map((member, index) => (
               <motion.div 
