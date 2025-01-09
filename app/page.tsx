@@ -26,6 +26,77 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
+  const advisors = [
+    { name: "Andrew Kang", role: "Mechanism Capital", twitter: "@Rewkang", link: "https://x.com/Rewkang", image: "/images/Investment/Andrew.jpg" },
+    { name: "Marc Weinstein", role: "Mechanism Capital", twitter: "@WarcMeinstein", link: "https://x.com/WarcMeinstein", image: "/images/Investment/Marc.jpg" },
+    { name: "Casey Caruso", role: "Topology Ventures", twitter: "@caseykcaruso", link: "https://x.com/caseykcaruso", image: "/images/Investment/Casey.jpg" },
+    { name: "Anil Lulla", role: "Delphi Digital", twitter: "@anildelphi", link: "https://x.com/anildelphi", image: "/images/Investment/Anil.jpg" },
+    { name: "Tommy Shaughnessy", role: "Delphi Digital", twitter: "@Shaughnessy", link: "https://x.com/Shaughnessy", image: "/images/Investment/Tommy.jpg" },
+    { name: "Justin Lee", role: "Coinbase Ventures", twitter: "@shiny_shiba_", link: "https://x.com/shiny_shiba_", image: "/images/Investment/Justin.JPG" }
+  ];
+  const firstRowCount = 4;
+  const secondRowCount = advisors.length - firstRowCount;
+
+  const partners = [
+    { src: "/images/dao/Coinbase.svg", alt: "Coinbase", name: "Coinbase" },
+    { src: "/images/dao/Google.svg", alt: "Google", name: "Google" },
+    { src: "/images/dao/Nous_Better.png", alt: "Nous Research", name: "Nous Research", dimensions: { width: 100, height: 100 } },
+    { src: "/images/dao/Ai16z.svg", alt: "a16z", name: "ai16z" },
+    { src: "/images/dao/VirtualsProtocol.svg", alt: "Virtuals Protocol", name: "Virtuals Protocol" },
+    { src: "/images/dao/EigenLayer.svg", alt: "EigenLayer", name: "EigenLayer", dimensions: { width: 70, height: 40 }},
+    { src: "/images/dao/Abstract.svg", alt: "Abstract", name: "Abstract" },
+    { src: "/images/dao/Bankless.svg", alt: "Bankless", name: "Bankless", dimensions: { width: 50, height: 40 }},
+    { src: "/images/dao/StoryProtocol.svg", alt: "Story Protocol", name: "Story Protocol", dimensions: { width: 70, height: 40 }},
+    { src: "/images/dao/DelphiDigital.svg", alt: "Delphi Digital", name: "Delphi Digital" },
+    { src: "/images/dao/Mechanism.svg", alt: "Mechanism Capital", name: "Mechanism Capital" },
+    { src: "/images/dao/TopologyVentures.svg", alt: "Topology Ventures", name: "Topology Ventures", dimensions: { width: 70, height: 40 }},
+    { src: "/images/dao/Arc.svg", alt: "ARC Protocol", name: "ARC" },
+  ];
+
+  const firstRow = partners.slice(0, 7);
+  const secondRow = partners.slice(7);
+
+  const developmentAdvisors = [
+    { name: "Shaw", role: "Ai16z", twitter: "@shawmakesmagic", link: "https://x.com/shawmakesmagic", image: "/images/Development/Shaw.jpg" },
+    { name: "Jin", role: "Ai16z", twitter: "@dankvr", link: "https://x.com/dankvr", image: "/images/Development/Jin.jpg" },
+    { name: "Ethermage", role: "Virtuals Protocol", twitter: "@ethermage", link: "https://x.com/ethermage", image: "/images/Development/EtherMage.jpg" },
+    { name: "Karan", role: "Open Source AI Developer", twitter: "@karan4d", link: "https://x.com/karan4d", image: "/images/Development/Karan.jpg" },
+    { name: "Nader", role: "Eigenlayer", twitter: "@dabit3", link: "https://x.com/dabit3", image: "/images/Development/Nadar.jpg" },
+    { name: "Cygaar", role: "Abstract", twitter: "@0xCygaar", link: "https://x.com/0xCygaar", image: "/images/Development/Cygaar.jpg" },
+    { name: "Jason", role: "Story Protocol", twitter: "@jasonjzhao", link: "https://x.com/jasonjzhao", image: "/images/Development/JasonZhao.png" },
+    { name: "Tachi", role: "ARC", twitter: "@0thTachi", link: "https://x.com/0thTachi", image: "/images/Development/Tachi.jpg" }
+  ];
+
+  const firstRowDevCount = 5; // First row will have 5 cards
+  const secondRowDevCount = developmentAdvisors.length - firstRowDevCount;
+
+  const investmentAdvisors = [
+    { name: "Andrew Kang", role: "Mechanism Capital", twitter: "@Rewkang", link: "https://x.com/Rewkang", image: "/images/Investment/Andrew.jpg" },
+    { name: "Marc Weinstein", role: "Mechanism Capital", twitter: "@WarcMeinstein", link: "https://x.com/WarcMeinstein", image: "/images/Investment/Marc.jpg" },
+    { name: "Casey Caruso", role: "Topology Ventures", twitter: "@caseykcaruso", link: "https://x.com/caseykcaruso", image: "/images/Investment/Casey.jpg" },
+    { name: "Anil Lulla", role: "Delphi Digital", twitter: "@anildelphi", link: "https://x.com/anildelphi", image: "/images/Investment/Anil.jpg" },
+    { name: "Tommy Shaughnessy", role: "Delphi Digital", twitter: "@Shaughnessy", link: "https://x.com/Shaughnessy", image: "/images/Investment/Tommy.jpg" },
+    { name: "Justin Lee", role: "Coinbase Ventures", twitter: "@shiny_shiba_", link: "https://x.com/shiny_shiba_", image: "/images/Investment/Justin.JPG" }
+  ];
+
+  const researchAdvisors = [
+    { name: "Sammy", role: "Moca Network", twitter: "@S4mmyEth", link: "https://x.com/S4mmyEth", image: "/images/Research/Sammy.jpg" },
+    { name: "Jeff", role: "Steak Studio", twitter: "@Defi0xJeff", link: "https://x.com/Defi0xJeff", image: "/images/Research/Jeff.jpg" },
+    { name: "Kel", role: "Independent Researcher", twitter: "@kelxyz_", link: "https://x.com/kelxyz_", image: "/images/Research/Kel.jpg" },
+    { name: "Baoskee", role: "Daosfun", twitter: "@baoskee", link: "https://x.com/baoskee", image: "/images/Research/Baoskee.jpg" },
+    { name: "Skely", role: "AI/82", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" }
+  ];
+
+  const mediaAdvisors = [
+    { name: "David Hoffman", role: "Bankless", twitter: "@TrustlessState", link: "https://x.com/TrustlessState", image: "/images/MediaOutreach/DavidHoffman.jpg" },
+    { name: "Ryan Sean Adams", role: "Bankless", twitter: "@RyanSAdams", link: "https://x.com/RyanSAdams", image: "/images/MediaOutreach/RaySeanAdams.jpg" },
+    { name: "Threadguy", role: "Probably Nothing", twitter: "@notthreadguy", link: "https://x.com/notthreadguy", image: "/images/MediaOutreach/ThreadGuy.jpg" }
+  ];
+
+  const firstRowInvestCount = 5;
+  const firstRowResearchCount = 3;
+  const firstRowMediaCount = 3;
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -93,7 +164,63 @@ export default function Home() {
         behavior: 'smooth'
       });
     }
-  };
+  };  
+  const ProfileCard = ({ advisor, index }) => (
+    <motion.div
+      className="flex flex-col"
+      initial={{ 
+        opacity: 0, 
+        y: 20,
+        scale: 0.9,
+        filter: "blur(5px)"
+      }}
+      whileInView={{ 
+        opacity: 1, 
+        y: 0,
+        scale: 1,
+        filter: "blur(0px)"
+      }}
+      transition={{ 
+        duration: 0.5,
+        delay: index * 0.1,
+        ease: "easeOut"
+      }}
+      whileHover={{ 
+        y: -5,
+        transition: { duration: 0.2 }
+      }}
+      viewport={{ once: true }}
+    >
+      <Link 
+        href={advisor.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group cursor-pointer"
+      >
+        <motion.div 
+          className="aspect-square rounded-lg overflow-hidden mb-3"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+        >
+          <Image
+            src={advisor.image}
+            alt={advisor.name}
+            width={130}
+            height={126}
+            className="w-full h-full object-cover"
+            quality={100}
+          />
+        </motion.div>
+        <div className="flex justify-between items-start">
+          <div>
+            <h4 className="text-lg font-light">{advisor.name}</h4>
+            <p className="text-sm text-gray-400">{advisor.role}</p>
+          </div>
+          <Twitter size={16} className="text-gray-400 group-hover:text-white transition-colors mt-1" />
+        </div>
+      </Link>
+    </motion.div>
+  );
 
   return (
     <main className="min-h-screen relative">
@@ -190,7 +317,7 @@ We will achieve this through a combination of supporting the leading teams of to
           <motion.div variants={fadeInUp} style={{ fontFamily: 'prata' }}>
             <AnimatedNumber 
               finalValue={10000000000} 
-              className="text-[27px] sm:text-[27px] md:text-[60px] lg:text-[120px] font-light font-prata gradient-rainbow text-left"
+              className="text-[27px] sm:text-[30px] md:text-[58px] lg:text-[120px] font-light font-prata gradient-rainbow text-left"
               duration={5000}
             />
           </motion.div>
@@ -198,87 +325,134 @@ We will achieve this through a combination of supporting the leading teams of to
       </section>
 
       {/* DAO Members Section */}
-<section className="py-28 text-center">
-  <div className=" mx-auto px-6">
-    <motion.h2 
-      className="text-6xl font-light mb-16 section-title"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-    >
-      DAO with Members from
-    </motion.h2>
-    
-    <motion.div 
-      className="grid grid-cols-3 md:grid-cols-6 gap-6 sm:gap-12 mb-8 max-w-4xl mx-auto px-4 sm:px-6"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      {[
-        { src: "/images/dao/Coinbase.svg", alt: "Coinbase", name: "Coinbase" },
-        { src: "/images/dao/Google.svg", alt: "Google", name: "Google" },
-        { src: "/images/dao/Nous_Better.png", alt: "Nous Research", name: "Nous Research", dimensions: { width: 100, height: 100 } },
-        { src: "/images/dao/Ai16z.svg", alt: "a16z", name: "ai16z" },
-        { src: "/images/dao/VirtualsProtocol.svg", alt: "Virtuals Protocol", name: "Virtuals Protocol" },
-        { src: "/images/dao/EigenLayer.svg", alt: "EigenLayer", name: "EigenLayer", 
-          dimensions: { width: 70, height: 40 }} ,
 
-        { src: "/images/dao/Abstract.svg", alt: "Abstract", name: "Abstract" },
-        
-        { 
-          src: "/images/dao/Bankless.svg", 
-          alt: "Bankless", 
-          name: "Bankless",
-          dimensions: { width: 50, height: 40 }
-        },
-
-        { src: "/images/dao/StoryProtocol.svg", alt: "Story Protocol", name: "Story Protocol" ,
-          dimensions: { width: 70, height: 40 }},
-        { src: "/images/dao/DelphiDigital.svg", alt: "Delphi Digital", name: "Delphi Digital" },
-        { src: "/images/dao/Mechanism.svg", alt: "Mechanism Capital", name: "Mechanism Capital" },
-        { src: "/images/dao/TopologyVentures.svg", alt: "Topology Ventures", name: "Topology Ventures", 
-          dimensions: { width: 70, height: 40 }} ,
-        { src: "/images/dao/Arc.svg", alt: "ARC Protocol", name: "ARC" },
-      ].map((partner, index) => (
-        <motion.div
-          key={index}
-          className="flex flex-col items-center space-y-3"
-          variants={itemVariants}
-          whileHover={{ 
-            scale: 1.05,
-            transition: { duration: 0.2 }
-          }}
+     
+      <section className="py-28 text-center">
+      <div className="mx-auto px-6">
+        <motion.h2 
+          className="text-4xl md:text-6xl font-light mb-16 section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          <div className="w-[100px] h-[100px] flex items-center justify-center">
-            <Image
-              src={partner.src}
-              alt={partner.alt}
-              width={partner.dimensions?.width || 120}
-              height={partner.dimensions?.height || 120}
-              className="object-contain"
-            />
-          </div>
-          <span className="text-white text-sm font-light opacity-100">
-            {partner.name}
-          </span>
-        </motion.div>
-      ))}
-    </motion.div>
-    
-    <motion.p 
-      className="font-400 text-[30px]"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.8 }}
-    >
-      AND MORE.
-    </motion.p>
+          DAO with Members from
+        </motion.h2>
+        
+        {/* Mobile: 3 columns, Tablet: 4 columns, Desktop: 7-6 split layout */}
+        <div className="grid grid-cols-3 md:hidden gap-6 max-w-lg mx-auto">
+          {partners.map((partner, index) => (
+            <motion.div
+              key={index}
+              className="flex flex-col items-center space-y-2"
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              whileHover={{ 
+                scale: 1.05,
+                transition: { duration: 0.2 }
+              }}
+            >
+              <div className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] flex items-center justify-center">
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={partner.dimensions?.width || 100}
+                  height={partner.dimensions?.height || 100}
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-white text-xs sm:text-sm font-light opacity-100">
+                {partner.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Desktop layout (hidden on mobile) */}
+        <div className="hidden md:block space-y-12">
+          {/* First row - 7 logos */}
+          <motion.div 
+            className="grid grid-cols-7 gap-6 lg:gap-12 max-w-7xl mx-auto"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {partners.slice(0, 7).map((partner, index) => (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center space-y-3"
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <div className="w-[100px] h-[100px] flex items-center justify-center">
+                  <Image
+                    src={partner.src}
+                    alt={partner.alt}
+                    width={partner.dimensions?.width || 120}
+                    height={partner.dimensions?.height || 120}
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-white text-sm font-light opacity-100">
+                  {partner.name}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Second row - 6 logos */}
+          <motion.div 
+            className="grid grid-cols-6 gap-6 lg:gap-12 max-w-6xl mx-auto"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {partners.slice(7).map((partner, index) => (
+              <motion.div
+                key={index + 7}
+                className="flex flex-col items-center space-y-3"
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <div className="w-[100px] h-[100px] flex items-center justify-center">
+                  <Image
+                    src={partner.src}
+                    alt={partner.alt}
+                    width={partner.dimensions?.width || 120}
+                    height={partner.dimensions?.height || 120}
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-white text-sm font-light opacity-100">
+                  {partner.name}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
             </div>
-</section>
+            
+        <motion.p 
+          className="font-400 text-2xl md:text-[30px] mt-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8 }}
+        >
+          AND MORE.
+        </motion.p>
+      </div>
+    </section>
+
 
       <section className="relative overflow-hidden section-container" id='mission-section'>
 <div className="container mx-auto px-4 sm:px-6 md:px-40">
@@ -345,7 +519,8 @@ We will achieve this through a combination of supporting the leading teams of to
           </motion.h2>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-5xl mx-auto"
+          style={{fontFamily: 'Barlow Semi Condensed'}}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-5xl mx-auto "
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -387,16 +562,20 @@ We will achieve this through a combination of supporting the leading teams of to
                 variants={itemVariants}
               >
                 <Link 
+
                   href={member.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group cursor-pointer"
                 >
-                  <div className="h-[60px] mb-6 flex justify-between items-start" style={{ fontFamily: 'Barlow Semi Condensed' }}>
-                    <h3 className="text-2xl font-light leading-tight">
+                  <div className="h-[80px] mb-6 flex flex-col items-start" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                    <h3 className="text-2xl font-light leading-tight whitespace-nowrap text-left" 
+          style={{fontFamily: 'Barlow Semi Condensed'}}>
                       {member.name}
                     </h3>
-                    <Twitter size={20} className="text-gray-400 group-hover:text-white transition-colors mt-2" />
+                    <div className="mt-2">
+                      <Twitter size={20} className="text-gray-400 group-hover:text-white transition-colors" />
+                    </div>
                   </div>
 
                   <motion.div 
@@ -414,7 +593,7 @@ We will achieve this through a combination of supporting the leading teams of to
                     />
                   </motion.div>
 
-                  <p className="text-gray-300 text-base leading-relaxed">
+                  <p className="text-gray-300 text-base leading-relaxed text-left">
                     {member.description}
                   </p>
                 </Link>
@@ -423,6 +602,7 @@ We will achieve this through a combination of supporting the leading teams of to
           </motion.div>
         </div>
       </section>
+
 
       {/* Advisors Section */}
       <section className="py-32">
@@ -454,76 +634,43 @@ We will achieve this through a combination of supporting the leading teams of to
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>Development</h3>
+              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                Development
+              </h3>
             </motion.div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-              {[
-                { name: "Shaw", role: "Ai16z", twitter: "@shawmakesmagic", link: "https://x.com/shawmakesmagic", image: "/images/Development/Shaw.jpg" },
-                { name: "Jin", role: "Ai16z", twitter: "@dankvr", link: "https://x.com/dankvr", image: "/images/Development/Jin.jpg" },
-                { name: "Ethermage", role: "Virtuals Protocol", twitter: "@ethermage", link: "https://x.com/ethermage", image: "/images/Development/EtherMage.jpg" },
-                
-                { name: "Karan", role: "Open Source AI Developer", twitter: "@karan4d", link: "https://x.com/karan4d", image: "/images/Development/Karan.jpg" },
-                { name: "Nader", role: "Eigenlayer", twitter: "@dabit3", link: "https://x.com/dabit3", image: "/images/Development/Nadar.jpg" },
-                { name: "Cygaar", role: "Abstract", twitter: "@0xCygaar", link: "https://x.com/0xCygaar", image: "/images/Development/Cygaar.jpg" },
-                { name: "Jason", role: "Story Protocol", twitter: "@jasonjzhao", link: "https://x.com/jasonjzhao", image: "/images/Development/JasonZhao.png" },
-                { name: "Tachi", role: "ARC", twitter: "@0thTachi", link: "https://x.com/0thTachi", image: "/images/Development/Tachi.jpg" }
-              ].map((advisor, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col"
-                  initial={{ 
-                    opacity: 0, 
-                    y: 20,
-                    scale: 0.9,
-                    filter: "blur(5px)"
-                  }}
-                  whileInView={{ 
-                    opacity: 1, 
-                    y: 0,
-                    scale: 1,
-                    filter: "blur(0px)"
-                  }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    ease: "easeOut"
-                  }}
-                  whileHover={{ 
-                    y: -5,
-                    transition: { duration: 0.2 }
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <Link 
-                    href={advisor.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group cursor-pointer"
-                  >
-                    <motion.div 
-                      className="aspect-square rounded-lg overflow-hidden mb-3"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Image
-                        src={advisor.image}
-                        alt={advisor.name}
-                        width={130}
-                        height={126}
-                        className="w-full h-full object-cover"
-                        quality={100}
-                      />
-                    </motion.div>
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h4 className="text-lg font-light">{advisor.name}</h4>
-                        <p className="text-sm text-gray-400">{advisor.role}</p>
-                      </div>
-                      <Twitter size={16} className="text-gray-400 group-hover:text-white transition-colors mt-1" />
-                    </div>
-                  </Link>
-                </motion.div>
+
+            {/* Mobile Layout */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:hidden gap-6 sm:gap-8">
+              {developmentAdvisors.map((advisor, index) => (
+                <ProfileCard key={index} advisor={advisor} index={index} />
               ))}
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden lg:block">
+              {/* First Row */}
+              <div className="flex justify-center mb-8">
+                <div className="grid grid-cols-5 gap-8" style={{ width: '80%' }}>
+                  {developmentAdvisors.slice(0, firstRowDevCount).map((advisor, index) => (
+                    <ProfileCard key={index} advisor={advisor} index={index} />
+                  ))}
+                </div>
+              </div>
+
+              {/* Second Row - Centered */}
+              <div className="flex justify-center">
+                <div 
+                  className="grid gap-8"
+                  style={{
+                    gridTemplateColumns: `repeat(${secondRowDevCount}, minmax(0, 1fr))`,
+                    width: `${(secondRowDevCount / 5) * 80}%`
+                  }}
+                >
+                  {developmentAdvisors.slice(firstRowDevCount).map((advisor, index) => (
+                    <ProfileCard key={index + firstRowDevCount} advisor={advisor} index={index + firstRowDevCount} />
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -532,7 +679,7 @@ We will achieve this through a combination of supporting the leading teams of to
             className="mb-24"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
             <motion.div 
@@ -542,75 +689,43 @@ We will achieve this through a combination of supporting the leading teams of to
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>Investment</h3>
+              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                Investment
+              </h3>
             </motion.div>
-            <div className="flex justify-center items-center">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 justify-center">
-              {[
-                { name: "Andrew Kang", role: "Mechanism Capital", twitter: "@Rewkang", link: "https://x.com/Rewkang", image: "/images/Investment/Andrew.jpg" },
-                { name: "Marc Weinstein", role: "Mechanism Capital", twitter: "@WarcMeinstein", link: "https://x.com/WarcMeinstein", image: "/images/Investment/Marc.jpg" },
-                { name: "Casey Caruso", role: "Topology Ventures", twitter: "@caseykcaruso", link: "https://x.com/caseykcaruso", image: "/images/Investment/Casey.jpg" },
-                { name: "Anil Lulla", role: "Delphi Digital", twitter: "@anildelphi", link: "https://x.com/anildelphi", image: "/images/Investment/Anil.jpg" },
-                { name: "Tommy Shaughnessy", role: "Delphi Digital", twitter: "@Shaughnessy", link: "https://x.com/Shaughnessy", image: "/images/Investment/Tommy.jpg" },
-                { name: "Justin Lee", role: "Coinbase Ventures", twitter: "@shiny_shiba_", link: "https://x.com/shiny_shiba_", image: "/images/Investment/Justin.JPG" }
-              ].map((advisor, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col"
-                  initial={{ 
-                    opacity: 0, 
-                    y: 20,
-                    scale: 0.9,
-                    filter: "blur(5px)"
-                  }}
-                  whileInView={{ 
-                    opacity: 1, 
-                    y: 0,
-                    scale: 1,
-                    filter: "blur(0px)"
-                  }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    ease: "easeOut"
-                  }}
-                  whileHover={{ 
-                    y: -5,
-                    transition: { duration: 0.2 }
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <Link 
-                    href={advisor.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group cursor-pointer"
-                  >
-                    <motion.div 
-                      className="aspect-square rounded-lg overflow-hidden mb-3"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Image
-                        src={advisor.image}
-                        alt={advisor.name}
-                        width={130}
-                        height={126}
-                        className="w-full h-full object-cover"
-                        quality={100}
-                      />
-                    </motion.div>
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h4 className="text-lg font-light">{advisor.name}</h4>
-                        <p className="text-sm text-gray-400">{advisor.role}</p>
-                      </div>
-                      <Twitter size={16} className="text-gray-400 group-hover:text-white transition-colors mt-1" />
-                    </div>
-                  </Link>
-                </motion.div>
+
+            {/* Mobile Layout */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:hidden gap-6 sm:gap-8">
+              {investmentAdvisors.map((advisor, index) => (
+                <ProfileCard key={index} advisor={advisor} index={index} />
               ))}
             </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden lg:block">
+              {/* First Row */}
+              <div className="flex justify-center mb-8">
+                <div className="grid grid-cols-5 gap-8" style={{ width: '80%' }}>
+                  {investmentAdvisors.slice(0, 5).map((advisor, index) => (
+                    <ProfileCard key={index} advisor={advisor} index={index} />
+                  ))}
+                </div>
+              </div>
+
+              {/* Second Row - Single Card Centered */}
+              <div className="flex justify-center">
+                <div 
+                  className="grid gap-8"
+                  style={{
+                    gridTemplateColumns: "minmax(0, 1fr)",
+                    width: "16%" // 80% / 5 = 16% for one card width
+                  }}
+                >
+                  {investmentAdvisors.slice(5).map((advisor, index) => (
+                    <ProfileCard key={index + 5} advisor={advisor} index={index + 5} />
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -629,72 +744,34 @@ We will achieve this through a combination of supporting the leading teams of to
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>Research</h3>
+              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                Research
+              </h3>
             </motion.div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-              {[
-                { name: "Sammy", role: "Moca Network", twitter: "@S4mmyEth", link: "https://x.com/S4mmyEth", image: "/images/Research/Sammy.jpg" },
-                { name: "Jeff", role: "Steak Studio", twitter: "@Defi0xJeff", link: "https://x.com/Defi0xJeff", image: "/images/Research/Jeff.jpg" },
-                { name: "Kel", role: "Independent Researcher", twitter: "@kelxyz_", link: "https://x.com/kelxyz_", image: "/images/Research/Kel.jpg" },
-                { name: "Baoskee", role: "Daosfun", twitter: "@baoskee", link: "https://x.com/baoskee", image: "/images/Research/Baoskee.jpg" },
-                { name: "Skely", role: "AI/82", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" }
-              ].map((advisor, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col"
-                  initial={{ 
-                    opacity: 0, 
-                    y: 20,
-                    scale: 0.9,
-                    filter: "blur(5px)"
-                  }}
-                  whileInView={{ 
-                    opacity: 1, 
-                    y: 0,
-                    scale: 1,
-                    filter: "blur(0px)"
-                  }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    ease: "easeOut"
-                  }}
-                  whileHover={{ 
-                    y: -5,
-                    transition: { duration: 0.2 }
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <Link 
-                    href={advisor.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group cursor-pointer"
-                  >
-                    <motion.div 
-                      className="aspect-square rounded-lg overflow-hidden mb-3"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Image
-                        src={advisor.image}
-                        alt={advisor.name}
-                        width={130}
-                        height={126}
-                        className="w-full h-full object-cover"
-                        quality={100}
-                      />
-                    </motion.div>
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h4 className="text-lg font-light">{advisor.name}</h4>
-                        <p className="text-sm text-gray-400">{advisor.role}</p>
-                      </div>
-                      <Twitter size={16} className="text-gray-400 group-hover:text-white transition-colors mt-1" />
-                    </div>
-                  </Link>
-                </motion.div>
+
+            {/* Mobile Layout */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:hidden gap-6 sm:gap-8">
+              {researchAdvisors.map((advisor, index) => (
+                <ProfileCard key={index} advisor={advisor} index={index} />
               ))}
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden lg:block">
+              {/* Single Centered Row */}
+              <div className="flex justify-center">
+                <div 
+                  className="grid gap-8"
+                  style={{
+                    gridTemplateColumns: `repeat(${researchAdvisors.length}, minmax(0, 1fr))`,
+                    width: `${(researchAdvisors.length / 5) * 80}%` // Using same 80% width ratio
+                  }}
+                >
+                  {researchAdvisors.map((advisor, index) => (
+                    <ProfileCard key={index} advisor={advisor} index={index} />
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -712,70 +789,34 @@ We will achieve this through a combination of supporting the leading teams of to
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>Media Outreach</h3>
+              <h3 className="text-lg font-light mb-4 uppercase tracking-wider" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                Media Outreach
+              </h3>
             </motion.div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-              {[
-                { name: "David Hoffman", role: "Bankless", twitter: "@TrustlessState", link: "https://x.com/TrustlessState", image: "/images/MediaOutreach/DavidHoffman.jpg" },
-                { name: "Ryan Sean Adams", role: "Bankless", twitter: "@RyanSAdams", link: "https://x.com/RyanSAdams", image: "/images/MediaOutreach/RaySeanAdams.jpg" },
-                { name: "Threadguy", role: "Probably Nothing", twitter: "@notthreadguy", link: "https://x.com/notthreadguy", image: "/images/MediaOutreach/ThreadGuy.jpg" }
-              ].map((advisor, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col"
-                  initial={{ 
-                    opacity: 0, 
-                    y: 20,
-                    scale: 0.9,
-                    filter: "blur(5px)"
-                  }}
-                  whileInView={{ 
-                    opacity: 1, 
-                    y: 0,
-                    scale: 1,
-                    filter: "blur(0px)"
-                  }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    ease: "easeOut"
-                  }}
-                  whileHover={{ 
-                    y: -5,
-                    transition: { duration: 0.2 }
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <Link 
-                    href={advisor.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group cursor-pointer"
-                  >
-                    <motion.div 
-                      className="aspect-square rounded-lg overflow-hidden mb-3"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Image
-                        src={advisor.image}
-                        alt={advisor.name}
-                        width={130}
-                        height={126}
-                        className="w-full h-full object-cover"
-                        quality={100}
-                      />
-                    </motion.div>
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h4 className="text-lg font-light">{advisor.name}</h4>
-                        <p className="text-sm text-gray-400">{advisor.role}</p>
-                      </div>
-                      <Twitter size={16} className="text-gray-400 group-hover:text-white transition-colors mt-1" />
-                    </div>
-                  </Link>
-                </motion.div>
+
+            {/* Mobile Layout */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:hidden gap-6 sm:gap-8">
+              {mediaAdvisors.map((advisor, index) => (
+                <ProfileCard key={index} advisor={advisor} index={index} />
               ))}
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden lg:block">
+              {/* Single Centered Row */}
+              <div className="flex justify-center">
+                <div 
+                  className="grid gap-8"
+                  style={{
+                    gridTemplateColumns: `repeat(${mediaAdvisors.length}, minmax(0, 1fr))`,
+                    width: `${(mediaAdvisors.length / 5) * 80}%` // Using same 80% width ratio as other sections
+                  }}
+                >
+                  {mediaAdvisors.map((advisor, index) => (
+                    <ProfileCard key={index} advisor={advisor} index={index} />
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -792,7 +833,7 @@ We will achieve this through a combination of supporting the leading teams of to
       <section className="relative overflow-hidden section-container">
         {/* Robot Hand Top Left */}
         <motion.div 
-          className="absolute -top-32 left-0 w-[500px] opacity-100 pointer-events-none hidden md:block"
+          className="absolute -top-28 left-0 w-[500px] opacity-100 pointer-events-none hidden md:block"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -839,14 +880,14 @@ We will achieve this through a combination of supporting the leading teams of to
               }}
             >
               <h2 className="section-title text-4xl sm:text-5xl md:text-7xl font-light text-center md:text-left">
-                Mission Statement
+                Background
               </h2>
             </motion.div>
 
             {/* Content */}
             <div className="col-span-1 md:col-span-7 md:col-start-5 space-y-6 md:space-y-8 text-base sm:text-lg md:text-[20px] text-gray-300 px-4 md:px-0 md:ml-20">
               <p>
-                Accelerate Crypto AI development with a concentrated effort on the Agent Sector. This mission extends beyond any single blockchain or ecosystem, this DAO will be chain-agnostic, with a hyper-focused belief that agents will be the ultimate power users & consumers of ALL blockchains.
+                There are liquid markets that current venture capital firms are unable to tap into. Several legitimate teams are choosing fair launch models such as pumpfun, daosfun, and others.
               </p>
               
               <p>
@@ -854,19 +895,15 @@ We will achieve this through a combination of supporting the leading teams of to
               </p>
 
               <p>
-                We believe an open source ethos is critical for achieving decentralized AGI. Our support will also include further investments, networking & raising awareness of the best teams in the space.
+                It has become impossible to chase every individual project across every platform, so we are looking to leverage our network to become the <span className="text-white">one stop shop</span> for <span className="text-white">builders</span> and <span className="text-white">investors</span>.
               </p>
 
               <p>
-                In addition to this, we will design & build agents that we believe will empower the space & further our cause. We do not believe in sitting around & waiting for the future to happen, we will build it.
+                We are abstracting away the hard work for teams by providing a suite of funding, networking and raising awareness-thereby supporting projects that reach out and donate to us.
               </p>
 
               <p>
-                Our first agent will be a research agent specifically tailored to decentralized AI. It will not only source potential investments but diligence them & aid the investment team and the overall market.
-              </p>
-
-              <p>
-                Aiccelerate DAO and all its initiatives will unite under a single token: $AICC.
+                We aim to become both an <span className="text-white">investment DAO</span> and a <span className="text-white">development DAO</span> by fusing elements of both a <span className="text-white">human</span> and <span className="text-white">agentic</span> component. We plan to ship an array of agents that can elevate the space. Our first project is a public utility research agent that can help us, and the overall market make better judgement calls.
               </p>
             </div>
           </div>
