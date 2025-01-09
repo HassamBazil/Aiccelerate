@@ -436,7 +436,7 @@ export default function Home() {
               In addition to this, we will house a community of leading developers (multi-framework aligned) that will build an array of agents & tools that will further our cause. We do not believe in sitting around & waiting for the future to happen, we will build it. </p>
 
               <p>
-              Aiccelerate DAO and all its initiatives unite under a single token: $AICC. Contract Address: C3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw</p>
+              Aiccelerate DAO and all its initiatives unite under a single token: $AICC. Contract Address: 3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw</p> 
 
             </div>
           </div>
@@ -1201,7 +1201,7 @@ export default function Home() {
               },
               {
                 question: "What is the Aiccelerate DAO token and what is the contract address?",
-                answer: "$AICC will represent the DAO and all future initiatives. No new token will be created. The Contract Address is C3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw"
+                answer: "$AICC will represent the DAO and all future initiatives. No new token will be created. The Contract Address is 3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw"
               }
             ].map((faq, index) => (
               <div key={index} className="border-b border-white pb-6">
