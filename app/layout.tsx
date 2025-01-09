@@ -27,7 +27,21 @@ export default function RootLayout({
         />
         <link rel="icon" href="/Logo.jpeg" sizes="any" />
       </head>
-      <body className={`${prata.variable} ...other classes`}>{children}</body>
+      <body className={`${prata.variable} ...other classes`}>
+        {children}
+        <script type="module" dangerouslySetInnerHTML={{
+          __html: `
+            import { animate, scroll } from 'https://cdn.skypack.dev/motion'
+            
+            document.querySelectorAll(".section-container").forEach((section) => {
+              const header = section.querySelector(".section-title")
+              scroll(animate(header, { y: [-100, 100] }, { ease: "linear" }), {
+                target: header,
+              })
+            })
+          `
+        }} />
+      </body>
     </html>
   );
 }

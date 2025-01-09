@@ -32,7 +32,7 @@ const AnimatedNumber = ({ finalValue, className, duration = 2500, style }: Anima
   }, [finalValue, isAnimating]);
 
   return (
-    <div className={className} style={{ letterSpacing: '0.25em', ...style }}>
+    <div className={className} style={{ letterSpacing: '0.25em', ...style, textAlign: 'left', width: 'fit-content' }}>
       ${currentValue.toLocaleString()}
     </div>
   );

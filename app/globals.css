@@ -199,3 +199,17 @@ main {
   position: relative;
 }
 
+.section-container {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.section-title {
+  font-family: 'Prata';
+  position: relative;
+  display: inline-block;
+}
+
+/* Add this script to your layout.tsx */
+

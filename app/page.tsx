@@ -1,12 +1,13 @@
 "use client";
 
-import { Twitter } from 'lucide-react';
+import { AlignCenter, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import TextScramble from "@/components/ui/TextScramble";
 import { useState, useEffect } from 'react';
 import AnimatedNumber from '@/components/ui/AnimatedNumber';
 import { motion } from 'framer-motion';
+import EmailSubscribe from '@/components/ui/EmailSubscribe';
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -100,7 +101,7 @@ export default function Home() {
           <div className="flex items-center space-x-2 md:pl-8 lg:pl-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Image 
-                src="/Logo.jpeg" 
+                src="/LogoIcon.svg" 
                 alt="Logo" 
                 width={48} 
                 height={48}
@@ -150,7 +151,8 @@ export default function Home() {
             </div>
             
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-            We are a DAO of investors, developers and researchers with backgrounds from the top open source AI teams, Coinbase, Google, and major funds. We believe crypto x AI is at an inflection point and our mission is to accelerate effectively via investing and building. </p>
+            We are a DAO of investors, developers and researchers with backgrounds from the top open source AI teams, Coinbase, Google, and major funds.<br></br><br></br>
+            We believe crypto x AI is at an inflection point and our mission is to accelerate effectively via investing and building. </p>
 
             <button 
               onClick={scrollToMission}
@@ -162,77 +164,165 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DAO Members Section */}
-      <section className="py-32 text-center">
-        <div className="container mx-auto px-6">
-          <motion.h2 
-            className="text-5xl font-light mb-16 section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            DAO with Members from
-          </motion.h2>
-          
-          <motion.div 
-            className="grid grid-cols-3 md:grid-cols-6 gap-4 sm:gap-8 mb-8 max-w-4xl mx-auto px-4 sm:px-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {[
-              { src: "/images/CompanyLogos/Coinbase.png", alt: "Partner 1" },
-              { src: "/images/CompanyLogos/Google.jpg", alt: "Partner 2" },
-              { src: "/images/CompanyLogos/NousResearch.jpg", alt: "Partner 3" },
-              { src: "/images/CompanyLogos/Ai16z.png", alt: "Partner 4" },
-              { src: "/images/CompanyLogos/VirtualsProtocol.png", alt: "Partner 5" },
-              { src: "/images/CompanyLogos/DelphiDigital.jpg", alt: "Partner 6" },
-              { src: "/images/CompanyLogos/EigenLayer.jpg", alt: "Partner 7" },
-              { src: "/images/CompanyLogos/Abstract.jpg", alt: "Partner 8" },
-              { src: "/images/CompanyLogos/ARCProtocol.jpg", alt: "Partner 9" },
-              { src: "/images/CompanyLogos/StoryProtocol.jpg", alt: "Partner 10" },
-              { src: "/images/CompanyLogos/TopologyVentures.jpeg", alt: "Partner 11" },
-              { src: "/images/CompanyLogos/Bankless.png", alt: "Partner 12" }
-            ].map((partner, index) => (
-              <motion.div
-                key={index}
-                className="aspect-square bg-white/5 rounded-lg hover:bg-white/10 transition-colors p-2 sm:p-4 flex items-center justify-center"
-                variants={itemVariants}
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <Image
-                  src={partner.src}
-                  alt={partner.alt}
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-contain"
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-          
+ {/* Market Cap Section */}
+ <section className="py-32">
+        <motion.div 
+          className="container mx-auto px-6"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           <motion.p 
-            className="font-400 text-[30px]"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
+            className="text-md font-400 text-[30px] mb-4 text-center"
+            variants={fadeInUp}
           >
-            AND MORE.
+            MARKET CAPITALIZATION OF CRYPTO X AGENTIC AI
           </motion.p>
+          <motion.div variants={fadeInUp} style={{ fontFamily: 'prata' }}>
+            <AnimatedNumber 
+              finalValue={10000000000} 
+              className="text-[27px] sm:text-[27px] md:text-[60px] lg:text-[120px] font-light font-prata gradient-rainbow text-left"
+              duration={5000}
+            />
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* DAO Members Section */}
+<section className="py-28 text-center">
+  <div className=" mx-auto px-6">
+    <motion.h2 
+      className="text-6xl font-light mb-16 section-title"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      DAO with Members from
+    </motion.h2>
+    
+    <motion.div 
+      className="grid grid-cols-3 md:grid-cols-6 gap-6 sm:gap-12 mb-8 max-w-4xl mx-auto px-4 sm:px-6"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      {[
+        { src: "/images/dao/Coinbase.svg", alt: "Coinbase", name: "Coinbase" },
+        { src: "/images/dao/Google.svg", alt: "Google", name: "Google" },
+        { src: "/images/dao/NousResearch.svg", alt: "Nous Research", name: "Nous Research" },
+        { src: "/images/dao/Ai16z.svg", alt: "a16z", name: "ai16z" },
+        { src: "/images/dao/VirtualsProtocol.svg", alt: "Virtuals Protocol", name: "Virtuals Protocol" },
+        { src: "/images/dao/EigenLayer.svg", alt: "EigenLayer", name: "EigenLayer" },
+
+        { src: "/images/dao/Abstract.svg", alt: "Abstract", name: "Abstract" },
+        
+        { 
+          src: "/images/dao/Bankless.svg", 
+          alt: "Bankless", 
+          name: "Bankless",
+          dimensions: { width: 50, height: 40 }
+        },
+
+        { src: "/images/dao/StoryProtocol.svg", alt: "Story Protocol", name: "Story Protocol" ,
+          dimensions: { width: 70, height: 40 }},
+        { src: "/images/dao/DelphiDigital.svg", alt: "Delphi Digital", name: "Delphi Digital" },
+        { src: "/images/dao/Mechanism.svg", alt: "Mechanism Capital", name: "Mechanism Capital" },
+        { src: "/images/dao/TopologyVentures.svg", alt: "Topology Ventures", name: "Topology Ventures" },
+        { src: "/images/dao/arc.svg", alt: "ARC Protocol", name: "ARC" },
+      ].map((partner, index) => (
+        <motion.div
+          key={index}
+          className="flex flex-col items-center space-y-3"
+          variants={itemVariants}
+          whileHover={{ 
+            scale: 1.05,
+            transition: { duration: 0.2 }
+          }}
+        >
+          <div className="w-[100px] h-[100px] flex items-center justify-center">
+            <Image
+              src={partner.src}
+              alt={partner.alt}
+              width={partner.dimensions?.width || 120}
+              height={partner.dimensions?.height || 120}
+              className="object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100"
+            />
+          </div>
+          <span className="text-white text-sm font-light opacity-100">
+            {partner.name}
+          </span>
+        </motion.div>
+      ))}
+    </motion.div>
+    
+    <motion.p 
+      className="font-400 text-[30px]"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.8 }}
+    >
+      AND MORE.
+    </motion.p>
+            </div>
+</section>
+
+      <section className="relative overflow-hidden section-container">
+<div className="container mx-auto px-40 mt-48">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-24 items-start">
+            {/* Title with Parallax */}
+            <motion.div 
+              className="sticky"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="section-title text-7xl font-light" >
+                Our Mission
+              </h2>
+            </motion.div>
+
+            {/* Content */}
+            <div className="md:col-span-7 md:col-start-5 space-y-8 text-[20px] text-gray-300 ml-20">
+              <p>
+              Accelerate crypto AI Agent development, create the most extensive network, and support both the most exciting projects and open source initiatives across all ecosystems. We believe that an open source ethos is critical in the field of crypto x AI, for both the sake of acceleration, and for transparency and safety issues.
+              </p>
+              
+              <p>
+                There are liquid markets that current venture capital firms are unable to tap into. Several legitimate teams are choosing fair launch models such as pumpfun, daosfun, and others.
+                Our support will include further investments, networking, and raising awareness of the best teams. In addition to this, we plan to ship agents that can empower the space. 
+                </p>
+
+              <p>
+              We aim to become both an investment DAO and a developer DAO by fusing elements of both a human and agentic component. Our first project is a public utility research agent that can help us, and the overall market make better judgement calls. 
+         
+              </p>
+
+              <p>
+                We are abstracting away the hard work for teams by providing a suite of funding, networking and raising awareness—thereby supporting projects that reach out and donate to us.
+              </p>
+
+              <p>
+              Aiccelerate DAO and all its initiatives will unite under a single token: $AICC.  </p>
+            </div>
+          </div>
         </div>
       </section>
 
+
+
+
+              {/* Mission Section */}
+      <section >
+       
       {/* Core Team Section */}
       <section className="py-32">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 text-center">
           <motion.h2 
-            className="text-6xl md:text-7xl text-center mb-32 section-title"
+            className="text-6xl md:text-6xl text-center mb-32 section-title"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -242,7 +332,7 @@ export default function Home() {
           </motion.h2>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 max-w-7xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-5xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -253,8 +343,8 @@ export default function Home() {
                 name: "Mark",
                 twitter: "@markus9x",
                 link: "https://x.com/markus9x",
-                description: "Crypto Angel Investing since 2016. Former Head of Research at ICON VC. Prev University of Pennsylvania & Seoul National University.",
-                image: "images/OurTeam/Mark.jpg"
+                description: "Crypto Angel Investor since 2016. Prev UPenn, SNU.",
+                image: "images/Mark.png"
               },
               {
                 name: "Ejaaz",
@@ -271,8 +361,8 @@ export default function Home() {
                 image: "/images/OurTeam/Ropitoro.jpg"
               },
               {
-                name: "Aiccelerate Agent",
-                twitter: "?",
+                name: "Aiccelerate Agent 1",
+                twitter: "@aiacceleratedao",
                 link: "",
                 description: "Research/alpha agent",
                 image: "/images/OurTeam/AIAgent.png"
@@ -283,40 +373,36 @@ export default function Home() {
                 className="flex flex-col"
                 variants={itemVariants}
               >
-                <div className="mb-6" style={{ fontFamily: 'Barlow Semi Condensed' }}>
-                  <h3 className="text-3xl font-light mb-1" style={{ fontFamily: 'Barlow Semi Condensed' }}>{member.name}</h3>
-                  {member.link ? (
-                    <Link 
-                      href={member.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors text-lg"
-                    >
-                      {member.twitter}
-                    </Link>
-                  ) : (
-                    <p className="text-gray-400 text-lg">{member.twitter}</p>
-                  )}
-                </div>
-
-                <motion.div 
-                  className="w-full h-[300px] rounded-lg overflow-hidden mb-6"
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ duration: 0.2 }}
+                <Link 
+                  href={member.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group cursor-pointer"
                 >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={212}
-                    height={202}
-                    className="w-full h-full object-cover"
-                    quality={100}
-                  />
-                </motion.div>
+                  <div className="h-[60px] mb-6 flex justify-between items-start" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+                    <h3 className="text-3xl font-light leading-tight">{member.name}</h3>
+                    <Twitter size={20} className="text-gray-400 group-hover:text-white transition-colors mt-2" />
+                  </div>
 
-                <p className="text-gray-300 text-base leading-relaxed">
-                  {member.description}
-                </p>
+                  <motion.div 
+                    className="w-full aspect-square rounded-lg overflow-hidden mb-3"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={130}
+                      height={126}
+                      className="w-full h-full object-cover"
+                      quality={100}
+                    />
+                  </motion.div>
+
+                  <p className="text-gray-300 text-base leading-relaxed">
+                    {member.description}
+                  </p>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
@@ -326,8 +412,10 @@ export default function Home() {
       {/* Advisors Section */}
       <section className="py-32">
         <div className="container mx-auto px-6 max-w-6xl" style={{ fontFamily: 'Barlow Semi Condensed' }}>
+          <div className="flex justify-center items-center">
           <motion.h2 
             className="text-6xl md:text-7xl text-center mb-32 section-title"
+            style={{ textAlign: 'center' }}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
@@ -335,7 +423,7 @@ export default function Home() {
           >
             Our Advisors
           </motion.h2>
-
+          </div>
           {/* Development Section */}
           <motion.div 
             className="mb-24"
@@ -355,10 +443,11 @@ export default function Home() {
             </motion.div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
               {[
-                { name: "Shaw", role: "AI/82", twitter: "@shawmakesmagic", link: "https://x.com/shawmakesmagic", image: "/images/Development/Shaw.jpg" },
+                { name: "Shaw", role: "Ai16z", twitter: "@shawmakesmagic", link: "https://x.com/shawmakesmagic", image: "/images/Development/Shaw.jpg" },
+                { name: "Jin", role: "Ai16z", twitter: "@dankvr", link: "https://x.com/dankvr", image: "/images/Development/Jin.jpg" },
                 { name: "Ethermage", role: "Virtuals Protocol", twitter: "@ethermage", link: "https://x.com/ethermage", image: "/images/Development/EtherMage.jpg" },
-                { name: "Jin", role: "AI/82", twitter: "@dankvr", link: "https://x.com/dankvr", image: "/images/Development/Jin.jpg" },
-                { name: "Karan", role: "Open Source Developer", twitter: "@karan4d", link: "https://x.com/karan4d", image: "/images/Development/Karan.jpg" },
+                
+                { name: "Karan", role: "Open Source AI Developer", twitter: "@karan4d", link: "https://x.com/karan4d", image: "/images/Development/Karan.jpg" },
                 { name: "Nader", role: "Eigenlayer", twitter: "@dabit3", link: "https://x.com/dabit3", image: "/images/Development/Nadar.jpg" },
                 { name: "Cygaar", role: "Abstract", twitter: "@0xCygaar", link: "https://x.com/0xCygaar", image: "/images/Development/Cygaar.jpg" },
                 { name: "Jason", role: "Story Protocol", twitter: "@jasonjzhao", link: "https://x.com/jasonjzhao", image: "/images/Development/JasonZhao.png" },
@@ -390,37 +479,34 @@ export default function Home() {
                   }}
                   viewport={{ once: true }}
                 >
-                  <motion.div 
-                    className="aspect-square rounded-lg overflow-hidden mb-3"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
+                  <Link 
+                    href={advisor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group cursor-pointer"
                   >
-                    <Image
-                      src={advisor.image}
-                      alt={advisor.name}
-                      width={130}
-                      height={126}
-                      className="w-full h-full object-cover"
-                      quality={100}
-                    />
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: index * 0.1 + 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <h4 className="text-lg font-light">{advisor.name}</h4>
-                    <p className="text-sm text-gray-400">{advisor.role}</p>
-                    <Link 
-                      href={advisor.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    <motion.div 
+                      className="aspect-square rounded-lg overflow-hidden mb-3"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      {advisor.twitter}
-                    </Link>
-                  </motion.div>
+                      <Image
+                        src={advisor.image}
+                        alt={advisor.name}
+                        width={130}
+                        height={126}
+                        className="w-full h-full object-cover"
+                        quality={100}
+                      />
+                    </motion.div>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h4 className="text-lg font-light">{advisor.name}</h4>
+                        <p className="text-sm text-gray-400">{advisor.role}</p>
+                      </div>
+                      <Twitter size={16} className="text-gray-400 group-hover:text-white transition-colors mt-1" />
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -478,37 +564,34 @@ export default function Home() {
                   }}
                   viewport={{ once: true }}
                 >
-                  <motion.div 
-                    className="aspect-square rounded-lg overflow-hidden mb-3"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
+                  <Link 
+                    href={advisor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group cursor-pointer"
                   >
-                    <Image
-                      src={advisor.image}
-                      alt={advisor.name}
-                      width={130}
-                      height={126}
-                      className="w-full h-full object-cover"
-                      quality={100}
-                    />
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: index * 0.1 + 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <h4 className="text-lg font-light">{advisor.name}</h4>
-                    <p className="text-sm text-gray-400">{advisor.role}</p>
-                    <Link 
-                      href={advisor.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    <motion.div 
+                      className="aspect-square rounded-lg overflow-hidden mb-3"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      {advisor.twitter}
-                    </Link>
-                  </motion.div>
+                      <Image
+                        src={advisor.image}
+                        alt={advisor.name}
+                        width={130}
+                        height={126}
+                        className="w-full h-full object-cover"
+                        quality={100}
+                      />
+                    </motion.div>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h4 className="text-lg font-light">{advisor.name}</h4>
+                        <p className="text-sm text-gray-400">{advisor.role}</p>
+                      </div>
+                      <Twitter size={16} className="text-gray-400 group-hover:text-white transition-colors mt-1" />
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -537,8 +620,7 @@ export default function Home() {
                 { name: "Jeff", role: "Steak Studio", twitter: "@Defi0xJeff", link: "https://x.com/Defi0xJeff", image: "/images/Research/Jeff.jpg" },
                 { name: "Kel", role: "Independent Researcher", twitter: "@kelxyz_", link: "https://x.com/kelxyz_", image: "/images/Research/Kel.jpg" },
                 { name: "Baoskee", role: "Daosfun", twitter: "@baoskee", link: "https://x.com/baoskee", image: "/images/Research/Baoskee.jpg" },
-                { name: "Skely", role: "AI/82", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" },
-                { name: "Teng Yuan", role: "Chain of Thought", twitter: "@0xPrismatic", link: "https://x.com/0xPrismatic", image: "/images/Research/Teng.jpg" }
+                { name: "Skely", role: "AI/82", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" }
               ].map((advisor, index) => (
                 <motion.div
                   key={index}
@@ -566,37 +648,34 @@ export default function Home() {
                   }}
                   viewport={{ once: true }}
                 >
-                  <motion.div 
-                    className="aspect-square rounded-lg overflow-hidden mb-3"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
+                  <Link 
+                    href={advisor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group cursor-pointer"
                   >
-                    <Image
-                      src={advisor.image}
-                      alt={advisor.name}
-                      width={130}
-                      height={126}
-                      className="w-full h-full object-cover"
-                      quality={100}
-                    />
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: index * 0.1 + 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <h4 className="text-lg font-light">{advisor.name}</h4>
-                    <p className="text-sm text-gray-400">{advisor.role}</p>
-                    <Link 
-                      href={advisor.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    <motion.div 
+                      className="aspect-square rounded-lg overflow-hidden mb-3"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      {advisor.twitter}
-                    </Link>
-                  </motion.div>
+                      <Image
+                        src={advisor.image}
+                        alt={advisor.name}
+                        width={130}
+                        height={126}
+                        className="w-full h-full object-cover"
+                        quality={100}
+                      />
+                    </motion.div>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h4 className="text-lg font-light">{advisor.name}</h4>
+                        <p className="text-sm text-gray-400">{advisor.role}</p>
+                      </div>
+                      <Twitter size={16} className="text-gray-400 group-hover:text-white transition-colors mt-1" />
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -650,37 +729,34 @@ export default function Home() {
                   }}
                   viewport={{ once: true }}
                 >
-                  <motion.div 
-                    className="aspect-square rounded-lg overflow-hidden mb-3"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
+                  <Link 
+                    href={advisor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group cursor-pointer"
                   >
-                    <Image
-                      src={advisor.image}
-                      alt={advisor.name}
-                      width={130}
-                      height={126}
-                      className="w-full h-full object-cover"
-                      quality={100}
-                    />
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: index * 0.1 + 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <h4 className="text-lg font-light">{advisor.name}</h4>
-                    <p className="text-sm text-gray-400">{advisor.role}</p>
-                    <Link 
-                      href={advisor.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    <motion.div 
+                      className="aspect-square rounded-lg overflow-hidden mb-3"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      {advisor.twitter}
-                    </Link>
-                  </motion.div>
+                      <Image
+                        src={advisor.image}
+                        alt={advisor.name}
+                        width={130}
+                        height={126}
+                        className="w-full h-full object-cover"
+                        quality={100}
+                      />
+                    </motion.div>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h4 className="text-lg font-light">{advisor.name}</h4>
+                        <p className="text-sm text-gray-400">{advisor.role}</p>
+                      </div>
+                      <Twitter size={16} className="text-gray-400 group-hover:text-white transition-colors mt-1" />
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -688,134 +764,163 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Market Cap Section */}
-      <section className="py-32">
-        <motion.div 
-          className="container mx-auto px-6 text-center"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.p 
-            className="text-md text-gray-400 mb-4"
-            variants={fadeInUp}
-          >
-            MARKET CAPITALIZATION OF CRYPTO X AGENTIC AI
-          </motion.p>
-          <motion.div variants={fadeInUp} style={{ fontFamily: 'prata' }}>
-            <AnimatedNumber 
-              finalValue={10000000000} 
-              className="text-[32px] sm:text-[32px] md:text-[60px] lg:text-[120px] font-light font-prata gradient-rainbow"
-              duration={5000}
-            />
-          </motion.div>
-        </motion.div>
-      </section>
+     
 
-      {/* Mission Section */}
-      <section id="mission-section" className="py-32 relative">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <motion.h2 
-            className="text-6xl md:text-7xl text-center mb-16 section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            Our Mission
-          </motion.h2>
-          
-          <motion.div 
-            className="space-y-8 text-center text-[25px] text-gray-300 px-4 sm:px-8 md:px-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <motion.p variants={fadeInUp}>
-              Accelerate crypto AI Agent development, become the DAO of the sector, and support both the most exciting projects and the open source initiatives that elevate this space. We believe that an open source ethos is critical especially in the field of crypto x AI, not just for the sake of acceleration, but for transparency and safety issues.
-            </motion.p>
-            
-            <motion.p variants={fadeInUp}>
-              Our support will include further investments, networking, and raising awareness of the best teams. In addition to this, we plan to ship agents that can empower the space. Our first project is a public utility alpha/research agent that can help us, and the overall market make better judgement calls.
-            </motion.p>
-            
-            <motion.p variants={fadeInUp} className="text-[25px]">
-              We aim to become both an <span className="font-medium">investment</span> DAO and a <span className="font-medium">builder</span> DAO by fusing elements of both a <span className="font-medium">human</span> and <span className="font-medium">agentic</span> component.
-            </motion.p>
-          </motion.div>
-        </div>
+      
 
-        {/* Left Robohand */}
-        <motion.div 
-          className="absolute -bottom-48 left-0 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] opacity-100 pointer-events-none"
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.4 }}
-        >
-          <Image
-            src="/images/robohand1.png"
-            alt="Robotic Hand"
-            width={600}
-            height={600}
-            className="w-full h-auto"
-            priority
-          />
-        </motion.div>
+        
       </section>
 
       {/* Background Section */}
-      <section className="py-32 relative">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <motion.h2 
-            className="text-6xl md:text-7xl text-center mb-16 section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            Background
-          </motion.h2>
-          
-          <motion.div 
-            className="space-y-8 text-center text-[25px] text-gray-300 px-4 sm:px-8 md:px-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <motion.p variants={fadeInUp}>
-              We believe that crypto x agentic AI is at an inflection point and there are liquid markets that current venture capital firms are unable to tap into. Several legitimate teams are choosing fair launch models such as pumpkin, daosfun, and others.
-            </motion.p>
-            
-            <motion.p variants={fadeInUp}>
-              A prime example of this is the meteoric rise of the AI/82 fund which currently has over $37M in assets under management, a staggering growth from just $6M a month ago. This fund consists almost entirely of AI coins with no vc involvement, some of which have surpassed $100M in market capitalization.
-            </motion.p>
-            
-            <motion.p variants={fadeInUp}>
-              It has become impossible to chase every individual project across every platform, so we are looking to leverage our network to become the <span className="font-medium">one stop shop</span> for builders. Abstracting away the hard work for builders by providing a suite of funding, networking and marketing- enabling projects to reach out and donate to us in return for support.
-            </motion.p>
-          </motion.div>
-        </div>
-
-        {/* Right Robohand */}
+      <section className="relative overflow-hidden section-container">
+        {/* Robot Hand Top Left */}
         <motion.div 
-          className="absolute -bottom-24 right-0 w-[500px] opacity-100 pointer-events-none"
-          initial={{ opacity: 0, x: 100 }}
+          className="absolute -top-32 left-0 w-[500px] opacity-100 pointer-events-none"
+          initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.4 }}
+          transition={{ duration: 1 }}
         >
           <Image
-            src="/images/robohand2.png"
+            src="/images/robohandnew.png"
             alt="Robotic Hand"
             width={500}
             height={500}
             className="w-full h-auto"
           />
         </motion.div>
+
+        {/* Human Hand Right */}
+        <motion.div 
+          className="absolute top-2 right-0 w-[500px] opacity-100 pointer-events-none"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          <Image
+            src="/images/GoodHandnew.png"
+            alt="Human Hand Right"
+            width={500}
+            height={500}
+            className="w-full h-auto"
+          />
+        </motion.div>
+
+        {/* Content */}
+        <div className="container mx-auto px-40 mt-52">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-24 items-start">
+            {/* Title with Parallax */}
+            <motion.div 
+              className="md:col-span-3 sticky"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="section-title text-7xl font-light">
+                Background
+              </h2>
+            </motion.div>
+
+            {/* Content */}
+            <div className="md:col-span-7 md:col-start-5 space-y-8 text-[20px] text-gray-300 ml-10">
+              <p>
+                There are liquid markets that current venture capital firms are unable to tap into. Several legitimate teams are choosing fair launch models such as pumpfun, daosfun, and others.
+              </p>
+              
+              <p>
+                There are liquid markets that current venture capital firms are unable to tap into. Several legitimate teams are choosing fair launch models such as pumpfun, daosfun, and others.
+              </p>
+
+              <p>
+                It has become impossible to chase every individual project across every platform, so we are looking to leverage our network to become the{' '}
+                <span className="font-medium">one stop shop</span> for{' '}
+                <span className="font-medium">builders</span> and{' '}
+                <span className="font-medium">investors</span>.
+              </p>
+
+              <p>
+                We are abstracting away the hard work for teams by providing a suite of funding, networking and raising awareness—thereby supporting projects that reach out and donate to us.
+              </p>
+
+              <p>
+                We aim to become both an{' '}
+                <span className="font-medium">investment DAO</span> and a{' '}
+                <span className="font-medium">development DAO</span> by fusing elements of both a{' '}
+                <span className="font-medium">human</span> and{' '}
+                <span className="font-medium">agentic</span> component. We plan to ship an array of agents that can elevate the space. Our first project is a public utility research agent that can help us, and the overall market make better judgement calls.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tokenomics Section */}
+      <section className="relative overflow-hidden section-container">
+        {/* Token Image */}
+        <div className="flex justify-center mb-8 relative z-10">
+          <motion.div   
+            style={{ marginTop: '-80px', marginBottom: '-100px' }}
+            className="w-[390px] h-[335px] relative"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <Image
+              src="/images/Token.png"
+              alt="Token"
+              width={390}
+              height={335}
+              className="w-full h-full object-contain"
+              style={{ position: 'relative', zIndex: 10 }}
+            />
+          </motion.div>
+        </div>
+
+        {/* Content */}
+        <div className="container mx-auto px-40">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-24 items-start">
+            {/* Title with Parallax */}
+            <motion.div 
+              className="md:col-span-3 sticky"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="section-title text-7xl font-light">
+                Tokenomics
+              </h2>
+            </motion.div>
+
+            {/* Content */}
+            <div className="md:col-span-7 md:col-start-5 space-y-8 text-[20px] text-gray-300 ml-10">
+              <p>
+                Aiccelerate DAO and all its initiatives will have a single token: $AICC. No new token will be created
+              </p>
+
+              <p>
+                All our agents will funnel value back into the $AICC token as we incorporate utility/tokenomics to them.
+              </p>
+
+              <p>
+                Projects will be required to donate to our DAO fund in order to be considered for an investment/grant.
+              </p>
+
+              <p>
+                100K tokens will be required to become a partner which will give you access to a gated group chat and the use of our agent.
+              </p>
+
+              <p>
+                Our token holders will receive benefits in the form of future potential airdrops and exclusive investment opportunities.
+              </p>
+
+              <p>
+                In addition to this, as our AUM grows, we will use a percentage of our profits to buy back our token, essentially enabling the Accelerate DAO token $AICC to become the Crypto x AI index.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Details Section */}
@@ -823,10 +928,10 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.h2 
             className="text-6xl md:text-7xl text-center mb-16 section-title"
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
             Details
           </motion.h2>
@@ -851,7 +956,7 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <Image
-                src="/images/Human.png"
+                src="/images/Human 1.png"
                 alt="Human Component"
                 width={500}
                 height={600}
@@ -889,7 +994,7 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <Image
-                src="/images/Robot.png"
+                src="/images/GoodRobot2.png"
                 alt="Agent Component"
                 width={500}
                 height={600}
@@ -924,7 +1029,7 @@ export default function Home() {
       </section>
 
       {/* Conclusion Section */}
-      <section className="py-32">
+      <section className="py-32 text-center">
         <motion.div 
           className="container mx-auto px-6 max-w-4xl"
           initial={{ opacity: 0 }}
@@ -1142,15 +1247,15 @@ export default function Home() {
               },
               {
                 question: "How can a team apply for support?",
-                answer: "We welcome applications from all projects via a donation of x% to our DAO. This will lead to a research report generated by our agent which will be alerted to our DAO partners. If you are a pre-launch project, reach out to us at aicceleratedao@gmail.com"
+                answer: "We welcome applications from all projects via a donation of 1% to our DAO. This will lead to a research report generated by our agent which will be sent to our DAO partners. If you are a pre-launch project, reach out to us at aicceleratedao@gmail.com"
               },
               {
                 question: "What is the Aiccelerate DAO token and what is the contract address?",
-                answer: "The Aiccelerate DAO token is $AICC. The contract address is [contract address]"
+                answer: "The aiccelerate DAO token is $AICC. The contract address will be revealed soon on our Twitter"
               },
               {
                 question: "What are the tokenomics behind the $AICC Token?",
-                answer: "Partners will be able to participate in a gated group chat and will also be given future potential airdrops. The first agent we build will also incorporate additional tokenomics/utility to the $AICC token."
+                answer: "Projects will be required to donate to our DAO fund in order to be considered for an investment/grant. The profits from our DAO funds will be used to buy back our $AICC token. $AICC Partners will be able to participate in a gated group chat and will also be considered for future potential airdrops. The first agent we build will also incorporate additional tokenomics/utility to the $AICC token. No new token will be created. "
               }
             ].map((faq, index) => (
               <div key={index} className="border-b border-white pb-6">
@@ -1178,6 +1283,8 @@ export default function Home() {
             ))}
             </div>
 
+      {/* Email Subscription */}
+      <EmailSubscribe />
           {/* Contact Us Button */}
           <div className="mt-24 text-center">
             <Link 
@@ -1193,7 +1300,7 @@ export default function Home() {
       {/* Footer Logo */}
       <div className="py-16 text-center">
         <Image 
-          src="/Logo.jpeg"
+          src="/LogoIcon.svg"
           alt="Aiccelerate Logo"
           width={240}
           height={240}
@@ -1243,6 +1350,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
     </main>
   );
 }
