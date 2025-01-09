@@ -66,8 +66,8 @@ export default function Home() {
 
   const developmentAdvisors = [
     { name: "Shaw", role: "Ai16z", twitter: "@shawmakesmagic", link: "https://x.com/shawmakesmagic", image: "/images/Development/Shaw.jpg" },
-    { name: "Jin", role: "Ai16z", twitter: "@dankvr", link: "https://x.com/dankvr", image: "/images/Development/Jin.jpg" },
     { name: "Ethermage", role: "Virtuals Protocol", twitter: "@ethermage", link: "https://x.com/ethermage", image: "/images/Development/EtherMage.jpg" },
+    { name: "Jin", role: "Ai16z", twitter: "@dankvr", link: "https://x.com/dankvr", image: "/images/Development/Jin.jpg" },
     { name: "Karan", role: "Open Source AI Developer", twitter: "@karan4d", link: "https://x.com/karan4d", image: "/images/Development/Karan.jpg" },
     { name: "Nader", role: "Eigenlayer", twitter: "@dabit3", link: "https://x.com/dabit3", image: "/images/Development/Nadar.jpg" },
     { name: "Cygaar", role: "Abstract", twitter: "@0xCygaar", link: "https://x.com/0xCygaar", image: "/images/Development/Cygaar.jpg" },
@@ -92,7 +92,7 @@ export default function Home() {
     { name: "Jeff", role: "Steak Studio", twitter: "@Defi0xJeff", link: "https://x.com/Defi0xJeff", image: "/images/Research/Jeff.jpg" },
     { name: "Kel", role: "Independent Researcher", twitter: "@kelxyz_", link: "https://x.com/kelxyz_", image: "/images/Research/Kel.jpg" },
     { name: "Baoskee", role: "Daosfun", twitter: "@baoskee", link: "https://x.com/baoskee", image: "/images/Research/Baoskee.jpg" },
-    { name: "Skely", role: "AI/82", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" }
+    { name: "Skely", role: "Ai16z2", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" }
   ];
 
   const mediaAdvisors = [
