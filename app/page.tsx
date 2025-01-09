@@ -890,35 +890,25 @@ We will achieve this through a combination of supporting the leading teams of to
               }}
             >
               <h2 className="section-title text-4xl sm:text-5xl md:text-7xl font-light text-center md:text-left">
-                Mission Statement
+                Background
               </h2>
             </motion.div>
 
             {/* Content */}
             <div className="col-span-1 md:col-span-7 md:col-start-5 space-y-6 md:space-y-8 text-base sm:text-lg md:text-[20px] text-gray-300 px-4 md:px-0 md:ml-20">
               <p>
-                Accelerate Crypto AI development with a concentrated effort on the Agent Sector. This mission extends beyond any single blockchain or ecosystem, this DAO will be chain-agnostic, with a hyper-focused belief that agents will be the ultimate power users & consumers of ALL blockchains.
-              </p>
+              There are liquid markets that current venture capital firms are unable to tap into. Several legitimate teams are choosing fair launch models such as pumpfun, daosfun, and others. </p>
               
               <p>
-                We will leverage our extensive network, product investment & engineering expertise to support both the most exciting projects and open source initiatives across ecosystems.
-              </p>
+              It has become impossible to chase every individual project across every platform, so we are looking to leverage our network to become the one stop shop for builders and investors.  </p>
 
               <p>
-                We believe an open source ethos is critical for achieving decentralized AGI. Our support will also include further investments, networking & raising awareness of the across teams.
-              </p>
+              We are abstracting away the hard work for teams by providing a suite of funding, networking and raising awareness–thereby supporting projects that reach out and donate to us.   </p>
 
               <p>
-                In addition to this, we will design & build agents that we believe will empower the space & further our cause. We do not believe in sitting around & waiting for the future to happen, we will build it.
-              </p>
+              We aim to become both an investment DAO and a development DAO by fusing elements of both a human and agentic component. We plan to ship an array of agents that can elevate the space. Our first project is a public utility research agent that can help us, and the overall market make better judgement calls.  </p>
 
-              <p>
-                Our first agent will be a research agent specifically tailored to decentralized AI. It will not only source potential investments but diligence them & aid the investment team and the overall market.
-              </p>
-
-              <p>
-                Aiccelerate DAO and all its initiatives will unite under a single token: $AICC.
-              </p>
+            
             </div>
           </div>
         </div>
