@@ -233,7 +233,7 @@ export default function Home() {
   return (
     <main className="min-h-screen relative">
       {/* Navigation */}
-      <nav className={`fixed w-full px-4 sm:px-6 py-8 z-50 transition-all duration-300 ${
+      <nav className={`fixed w-full px-4 sm:px-6 py-7 sm:py-4 z-50 transition-all duration-300 ${
         scrolled ? 'bg-black/80 backdrop-blur-sm' : ''
       }`}>
         <div className="container mx-auto flex justify-between items-center max-w-7xl">
