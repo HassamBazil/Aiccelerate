@@ -49,7 +49,7 @@ export default function Home() {
   const partners = [
     { src: "/images/dao/Coinbase.svg", alt: "Coinbase", name: "Coinbase" },
     { src: "/images/dao/Google.svg", alt: "Google", name: "Google" },
-    { src: "/images/dao/Ai16z.svg", alt: "a16z", name: "Ai16z" },
+    { src: "/images/dao/Ai16z.svg", alt: "a16z", name: "ai16z" },
     { src: "/images/dao/VirtualsProtocol.svg", alt: "Virtuals Protocol", name: "Virtuals Protocol" },
     { src: "/images/dao/EigenLayer.svg", alt: "EigenLayer", name: "EigenLayer", dimensions: { width: 70, height: 40 }},
     { src: "/images/dao/Abstract.svg", alt: "Abstract", name: "Abstract" },
@@ -66,8 +66,8 @@ export default function Home() {
 
   const developmentAdvisors = [
     { name: "Shaw", role: "Ai16z", twitter: "@shawmakesmagic", link: "https://x.com/shawmakesmagic", image: "/images/Development/Shaw.jpg" },
-    { name: "Ethermage", role: "Virtuals Protocol", twitter: "@ethermage", link: "https://x.com/ethermage", image: "/images/Development/EtherMage.jpg" },
     { name: "Jin", role: "Ai16z", twitter: "@dankvr", link: "https://x.com/dankvr", image: "/images/Development/Jin.jpg" },
+    { name: "Ethermage", role: "Virtuals Protocol", twitter: "@ethermage", link: "https://x.com/ethermage", image: "/images/Development/EtherMage.jpg" },
     { name: "Karan", role: "Open Source AI Developer", twitter: "@karan4d", link: "https://x.com/karan4d", image: "/images/Development/Karan.jpg" },
     { name: "Nader", role: "Eigenlayer", twitter: "@dabit3", link: "https://x.com/dabit3", image: "/images/Development/Nadar.jpg" },
     { name: "Cygaar", role: "Abstract", twitter: "@0xCygaar", link: "https://x.com/0xCygaar", image: "/images/Development/Cygaar.jpg" },
@@ -92,7 +92,7 @@ export default function Home() {
     { name: "Jeff", role: "Steak Studio", twitter: "@Defi0xJeff", link: "https://x.com/Defi0xJeff", image: "/images/Research/Jeff.jpg" },
     { name: "Kel", role: "Independent Researcher", twitter: "@kelxyz_", link: "https://x.com/kelxyz_", image: "/images/Research/Kel.jpg" },
     { name: "Baoskee", role: "Daosfun", twitter: "@baoskee", link: "https://x.com/baoskee", image: "/images/Research/Baoskee.jpg" },
-    { name: "Skely", role: "Ai16z", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" }
+    { name: "Skely", role: "AI/82", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" }
   ];
 
   const mediaAdvisors = [
@@ -257,7 +257,6 @@ export default function Home() {
           <Link 
             href="https://x.com/aicceleratedao" 
             className="nav-link flex items-center md:pr-8 lg:pr-1"
-            target="_blank"
           >
             <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />
           </Link>
@@ -436,7 +435,7 @@ export default function Home() {
               In addition to this, we will house a community of leading developers (multi-framework aligned) that will build an array of agents & tools that will further our cause. We do not believe in sitting around & waiting for the future to happen, we will build it. </p>
 
               <p>
-              Aiccelerate DAO and all its initiatives unite under a single token: $AICC. Contract Address: 3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw</p> 
+              Aiccelerate DAO and all its initiatives unite under a single token: $AICC. Contract Address: 3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw</p>
 
             </div>
           </div>
@@ -991,7 +990,8 @@ export default function Home() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   style={{ 
-                    zIndex: 40
+                    zIndex: 40,
+                    background: 'none'
                   }}
                 >
                   <h2 className="section-title text-4xl sm:text-5xl md:text-7xl font-light text-center md:text-left pb-8" style={{ fontFamily: 'Barlow Semi Condensed' }}>
@@ -1076,7 +1076,7 @@ export default function Home() {
                   "Community building strategy",
                   "Token holder incentives",
                   "Partnership and collaboration potential",
-                  "Focus on impacts OUTSIDE of CT (web2 agnostic)  (we want projects that can make large impacts)",
+                  "Focus on impacts OUTSIDE of CT (web2 agnostic) (we want projects that can make large impacts)",
                   "Cross-chain/cross-platform integration"
                 ]
               },
@@ -1202,6 +1202,10 @@ export default function Home() {
               {
                 question: "What is the Aiccelerate DAO token and what is the contract address?",
                 answer: "$AICC will represent the DAO and all future initiatives. No new token will be created. The Contract Address is 3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw"
+              },
+              {
+                question: "What are the tokenomics behind the $AICC Token?",
+                answer: "Projects will be required to donate to our DAO fund in order to be considered for an investment/grant. The profits from our DAO funds will be used to buy back our $AICC token. $AICC Partners will be able to participate in a gated group chat and will also be considered for future potential airdrops. The first agent we build will also incorporate additional tokenomics/utility to the $AICC token. No new token will be created. "
               }
             ].map((faq, index) => (
               <div key={index} className="border-b border-white pb-6">
@@ -1260,7 +1264,7 @@ export default function Home() {
                 href="https://x.com/aicceleratedao"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full max-w-[200px] px-12 py-4 border border-white/20 rounded hover:bg-white/5 transition-all duration-300"
+                className="w-full max-w-[200px] px-8 py-4 border border-white/20 rounded hover:bg-white/5 transition-all duration-300"
               >
                 Twitter
               </Link>
@@ -1274,7 +1278,7 @@ export default function Home() {
             >
               <Link 
                 href="mailto:aicceleratedao@gmail.com"
-                className="w-full max-w-[200px] px-12 py-4 border border-white/20 rounded hover:bg-white/5 transition-all duration-300"
+                className="w-full max-w-[200px] px-8 py-4 border border-white/20 rounded hover:bg-white/5 transition-all duration-300"
               >
                 Email
               </Link>

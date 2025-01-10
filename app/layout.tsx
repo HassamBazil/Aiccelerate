@@ -43,7 +43,7 @@ export default function RootLayout({
         {children}
         <script type="module" dangerouslySetInnerHTML={{
           __html: `
-            import { animate, scroll } from 'https://cdn.skypack.dev/motion'
+            import { animate as motionAnimate, scroll } from 'https://cdn.skypack.dev/@motionone/dom'
             
             const updateParallaxAndStyles = () => {
               const titleContainers = document.querySelectorAll('.title-container');
@@ -52,7 +52,7 @@ export default function RootLayout({
                 // Enable parallax
                 document.querySelectorAll(".section-container").forEach((section) => {
                   const header = section.querySelector(".section-title")
-                  scroll(animate(header, { y: [-150, 150] }, { ease: "linear" }), {
+                  scroll(motionAnimate(header, { y: [-150, 150] }, { ease: "linear" }), {
                     target: header,
                   })
                 });
