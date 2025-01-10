@@ -92,7 +92,7 @@ export default function Home() {
     { name: "Jeff", role: "Steak Studio", twitter: "@Defi0xJeff", link: "https://x.com/Defi0xJeff", image: "/images/Research/Jeff.jpg" },
     { name: "Kel", role: "Independent Researcher", twitter: "@kelxyz_", link: "https://x.com/kelxyz_", image: "/images/Research/Kel.jpg" },
     { name: "Baoskee", role: "Daosfun", twitter: "@baoskee", link: "https://x.com/baoskee", image: "/images/Research/Baoskee.jpg" },
-    { name: "Skely", role: "AI/82", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" }
+    { name: "Skely", role: "Ai16z", twitter: "@123skely", link: "https://x.com/123skely", image: "/images/Research/Skely.jpg" }
   ];
 
   const mediaAdvisors = [
