@@ -284,7 +284,6 @@ export default function Home() {
             <div className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-tight">
               <TextScramble
                 textParts={["Accelerating", "Crypto x AI"]}
-                hoverTextParts={["Accelerating", "Crypto x AI"]}
               />
             </div>
             
@@ -750,35 +749,35 @@ export default function Home() {
         </div>
       </section>
 
-     
 
-      
+
+
 
         
       </section>
 
       {/* Robot Hand Transition */}
-      <motion.div 
+          <motion.div 
         className="relative w-full h-[300px] overflow-visible -mt-32 -mb-32 hidden md:block"
         initial={{ opacity: 0, x: -100, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-        viewport={{ once: true }}
+            viewport={{ once: true }}
         transition={{ 
           duration: 1.2,
           type: "spring",
           stiffness: 50,
           damping: 15
         }}
-      >
-        <Image
+                  >
+                    <Image
           src="/images/robohandnew.png"
           alt="Robotic Hand"
           width={500}
           height={500}
           className="absolute left-0 top-0 w-[500px] h-auto" 
           style={{ top: '-50px' }}
-        />
-      </motion.div>
+                    />
+                  </motion.div>
 
       {/* Background Section */}
       <section className="relative overflow-hidden section-container">
@@ -786,15 +785,15 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 md:px-40 mt-32">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-24 items-start">
             {/* Title with Parallax */}
-            <motion.div 
+          <motion.div 
               className={`
                 col-span-1 md:col-span-3 mb-8 md:mb-0 title-container
                 static md:sticky top-32
               `}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              style={{ 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+                  style={{
                 zIndex: 40,
                 background: 'none'
               }}
@@ -802,7 +801,7 @@ export default function Home() {
               <h2 className="section-title text-4xl sm:text-5xl md:text-7xl font-light text-center md:text-left">
                 Background
               </h2>
-            </motion.div>
+          </motion.div>
 
             {/* Content */}
             <div className="col-span-1 md:col-span-7 md:col-start-5 space-y-6 md:space-y-8 text-base sm:text-lg md:text-[20px] text-gray-300 px-4 md:px-0 md:ml-20">
@@ -817,17 +816,17 @@ export default function Home() {
               </p>
 
             
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
       </section>
 
       {/* Human Hand Transition */}
-      <motion.div 
+          <motion.div 
         className="relative w-full h-[300px] overflow-visible -mt-32 -mb-32 hidden md:block"
         initial={{ opacity: 0, x: 100, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-        viewport={{ once: true }}
+            viewport={{ once: true }}
         transition={{ 
           duration: 1.2,
           type: "spring",
@@ -843,7 +842,7 @@ export default function Home() {
           className="absolute right-0 top-0 w-[500px] h-auto" 
           style={{ top: '-240px' }}
         />
-      </motion.div>
+            </motion.div>
 
       
 
@@ -902,46 +901,46 @@ export default function Home() {
           >
             Our DAO will have a <span className="font-medium bold">Human</span> component and an <span className="font-medium bold">Agent</span> component.
           </motion.p>
-
+          
           {/* Human Component */}
           <section className="relative overflow-hidden section-container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32 relative">
-              <motion.div 
+          <motion.div 
                 className="relative w-full h-[600px] -top-10 -z-10"
                 initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                viewport={{ once: true }}
+            viewport={{ once: true }}
                 transition={{ 
                   duration: 1,
                   type: "spring",
                   stiffness: 40,
                   damping: 20
                 }}
-              >
-                <Image
+                  >
+                    <Image
                   src="/images/GenericHuman_Better.png"
                   alt="Human Component"
                   width={500}
                   height={600}
-                  className="w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                   priority
-                />
-              </motion.div>
+                    />
+                  </motion.div>
               <motion.div className="flex flex-col justify-center space-y-6">
                 {/* Title with Parallax */}
-                <motion.div 
+          <motion.div 
                   className="sticky col-span-1 md:col-span-3 mb-8 md:mb-0"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  style={{ 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+                  style={{
                     background: 'none'
                   }}
                 >
                   <h2 className="section-title text-4xl sm:text-5xl md:text-7xl font-light text-center md:text-left" style={{ fontFamily: 'Barlow Semi Condensed' }}>
                     Human
                   </h2>
-                </motion.div>
+          </motion.div>
                 <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
                   This would be the human component which invests and provides grants to both new and existing high potential projects and those that contribute to open source AI development.
                 </p>
@@ -951,45 +950,45 @@ export default function Home() {
                 <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
                 The core team would also leverage the DAO network to connect with pre-launch teams to discuss investment opportunities and potential airdrops for our DAO partners.
                 </p>
-              </motion.div>
+            </motion.div>
             </div>
           </section>
 
           {/* Agent Component */}
           <section className="relative overflow-hidden section-container pt-18">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div 
+          <motion.div 
                 className="relative w-full h-[600px] order-1"
                 initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                viewport={{ once: true }}
+            viewport={{ once: true }}
                 transition={{ 
                   duration: 1,
                   type: "spring",
                   stiffness: 40,
                   damping: 20
                 }}
-              >
-                <Image
+                  >
+                    <Image
                   src="/images/GoodRobot2.png"
                   alt="Agent Component"
                   width={500}
                   height={600}
-                  className="w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                   priority
-                />
-              </motion.div>
+                    />
+                  </motion.div>
               <motion.div className="flex flex-col justify-center space-y-6 order-2">
                 {/* Title with Parallax */}
-                <motion.div 
+          <motion.div 
                   className={`
                     sticky col-span-1 md:col-span-3 mb-8 md:mb-0
                     static md:sticky top-24
                   `}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  style={{ 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+                  style={{
                     zIndex: 40,
                     background: 'none'
                   }}
@@ -997,7 +996,7 @@ export default function Home() {
                   <h2 className="section-title text-4xl sm:text-5xl md:text-7xl font-light text-center md:text-left pb-8" style={{ fontFamily: 'Barlow Semi Condensed' }}>
                     Agent
                   </h2>
-                </motion.div>
+          </motion.div>
                 <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
                 Due to the high velocity of AI projects launching, our first agent is a research agent with wide analysis across several different data feeds and custom metrics. A donation to our DAO would trigger it to provide research on the project that donated (subject to change).</p>
                 <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
@@ -1006,10 +1005,10 @@ export default function Home() {
                 We believe that a research agent with concrete analysis backed by a <b>DAO with a strong social network</b> is what’s necessary to ensure its success. This will provide social credibility that can further amplify its reach.</p>
                 <p className="text-[20px] text-gray-300 leading-[1.4] min-h-[84px]">
                 This will be the first of many agents that we will ship. </p>
-              </motion.div>
+            </motion.div>
             </div>
           </section>
-        </div>
+                </div>
       </section>
 
       {/* Conclusion Section */}
@@ -1017,14 +1016,14 @@ export default function Home() {
 
       {/* AGENT Framework */}
       <section className="py-32">
-        <motion.div 
+          <motion.div
           className="container mx-auto px-6 max-w-6xl"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <motion.h2  
+            viewport={{ once: true }}
+          >
+          <motion.h2 
             className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl mb-16 md:mb-32 section-title agent-framework text-center overflow-x-auto md:overflow-visible"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1090,8 +1089,8 @@ export default function Home() {
                  ]
               }
             ].map((section, index) => (
-              <motion.div
-                key={index}
+              <motion.div 
+                key={index} 
                 className="relative grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
                 style={{ fontFamily: 'Barlow Semi Condensed' }}
                 initial={{ 
@@ -1111,7 +1110,7 @@ export default function Home() {
                 viewport={{ once: true }} 
                 
               >
-                <motion.div 
+          <motion.div 
                   className="md:col-span-4 lg:col-span-5 flex justify-center md:justify-end md:pr-4"
                   initial={{ 
                     opacity: 0,
@@ -1128,13 +1127,13 @@ export default function Home() {
                     ease: [0.25, 0.1, 0.25, 1],
                     delay: 0.2
                   }}
-                  viewport={{ once: true }}
-                >
+            viewport={{ once: true }}
+          >
                   <span className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-light section-title leading-none block opacity-90 pt-4 font-proto-mono">
                     {section.letter}
                   </span>
-                </motion.div>
-                
+            </motion.div>
+
                 <motion.div 
                   className="md:col-span-8 lg:col-span-7 relative"
                   initial={{ opacity: 0, y: 30 }}
@@ -1143,14 +1142,14 @@ export default function Home() {
                     duration: 0.6, 
                     delay: index * 0.2 + 0.4 
                   }}
-                  viewport={{ once: true }}
-                >
+            viewport={{ once: true }}
+          >
                   <div className="absolute -top-4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                   
                   <div className="py-6" style={{ fontFamily: 'Barlow Semi Condensed' }}>
                     <h3 className="text-3xl md:text-4xl mb-6 font-light tracking-wide" style={{ fontFamily: 'Barlow Semi Condensed' }}>
                       {section.title}
-                    </h3>
+              </h3>
                     <ul className="space-y-4 text-gray-300 text-lg">
                       {section.items.map((item, i) => (
                         <motion.li
@@ -1169,14 +1168,14 @@ export default function Home() {
                         </motion.li>
                       ))}
               </ul>
-            </div>
+                </div>
 
                   <div className="absolute -bottom-4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                </motion.div>
+            </motion.div>
               </motion.div>
-            ))}
+              ))}
             </div>
-        </motion.div>
+          </motion.div>
       </section>
 
 
@@ -1215,11 +1214,11 @@ export default function Home() {
                 >
                   <h3 className="text-2xl font-light">
                     Q: {faq.question}
-                  </h3>
+                      </h3>
                   <span className="text-2xl transform transition-transform duration-300">
                     {openFaq === index ? "−" : "+"}
                   </span>
-                </div>
+                    </div>
                 <div 
                   className={`transform transition-all duration-300 ease-in-out overflow-hidden ${
                     openFaq === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
@@ -1228,35 +1227,35 @@ export default function Home() {
                   <p className="mt-4 text-gray-300 text-xl">
                     A: {faq.answer}
                   </p>
-            </div>
-            </div>
-            ))}
+        </div>
+          </div>
+              ))}
             </div>
  {/* Contact Us Section */}
  <section className="py-32 text-center">
-        <motion.div
+          <motion.div 
           className="container mx-auto px-6"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+            viewport={{ once: true }}
+          >
           <motion.h2 
             className="text-7xl font-light mb-16 section-title"
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
+              viewport={{ once: true }}
+            >
             Contact Us
           </motion.h2>
 
           <div className="flex flex-col items-center space-y-14 " >
-            <motion.div
+          <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
+            viewport={{ once: true }}
               style={{width: '300px'}} 
             >
 
@@ -1268,14 +1267,14 @@ export default function Home() {
               >
                 Twitter
               </Link>
-            </motion.div>
+          </motion.div>
 
-            <motion.div
+          <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
+            viewport={{ once: true }}
+          >
               <Link 
                 href="mailto:aicceleratedao@gmail.com"
                 className="w-full max-w-[200px] px-8 py-4 border border-white/20 rounded hover:bg-white/5 transition-all duration-300"
@@ -1283,7 +1282,7 @@ export default function Home() {
                 Email
               </Link>
             </motion.div>
-          </div>
+            </div>
         </motion.div>
       </section>
       {/* Email Subscription */}
@@ -1298,9 +1297,9 @@ export default function Home() {
         initial={{ opacity: 0, y: 30, filter: "blur(5px)" }}
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <motion.div
+            viewport={{ once: true }}
+          >
+          <motion.div 
           initial={{ scale: 0.8, rotate: -10 }}
           whileInView={{ scale: 1, rotate: 0 }}
           transition={{ 
@@ -1320,25 +1319,25 @@ export default function Home() {
               }
             }
           }}
-        >
-          <Image 
+                  >
+                    <Image
             src="/LogoIcon.svg"
             alt="Aiccelerate Logo"
             width={240}
             height={240}
             className="mx-auto mb-4"
-          />
-        </motion.div>
+                    />
+                  </motion.div>
         <motion.p 
           className="text-3xl gradient-rainbow pt-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
+            viewport={{ once: true }}
+          >
           AICCELERATE
         </motion.p>
-      </motion.div>
+            </motion.div>
 
       {/* Footer */}
       <footer className="py-6 border-t border-white/10">
@@ -1362,12 +1361,12 @@ export default function Home() {
             >
               Discord
             </Link>
-          </div>
-          
+            </div>
+
           <div className="text-sm text-gray-400 space-x-4">
             <span>© 2025 Aiccelerate. All rights reserved.</span>
-          </div>
-        </div>
+                </div>
+              </div>
       </footer>
 
      

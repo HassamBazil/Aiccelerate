@@ -5,10 +5,9 @@ interface AnimatedNumberProps {
   finalValue: number;
   className?: string;
   duration?: number;
-  style?: React.CSSProperties;
 }
 
-const AnimatedNumber = ({ finalValue, className, duration = 2500, style }: AnimatedNumberProps) => {
+const AnimatedNumber = ({ finalValue, className, duration = 2500 }: AnimatedNumberProps) => {
   const [currentValue, setCurrentValue] = useState(13800000000);
   const [isAnimating, setIsAnimating] = useState(true);
 
@@ -32,7 +31,7 @@ const AnimatedNumber = ({ finalValue, className, duration = 2500, style }: Anima
   }, [finalValue, isAnimating]);
 
   return (
-    <div className={className} style={{ letterSpacing: '0.25em', ...style, textAlign: 'left', width: 'fit-content' }}>
+    <div className={className} style={{ letterSpacing: '0.25em', textAlign: 'left', width: 'fit-content' }}>
       ${currentValue.toLocaleString()}
     </div>
   );

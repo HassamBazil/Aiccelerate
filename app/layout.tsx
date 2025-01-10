@@ -9,12 +9,6 @@ const prata = Prata({
   variable: '--font-prata',
 });
 
-const monoFont = Space_Mono({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-mono',
-});
-
 const protoMono = localFont({
   src: '../public/fonts/ProtoMono-SemiBold.ttf',
   variable: '--font-proto-mono'

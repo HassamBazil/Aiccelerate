@@ -3,10 +3,9 @@ import { useState, useEffect } from 'react';
 
 interface TextScrambleProps {
   textParts: string[];
-  hoverTextParts: string[];
 }
 
-const TextScramble = ({ textParts, hoverTextParts }: TextScrambleProps) => {
+const TextScramble = ({ textParts }: TextScrambleProps) => {
   const [displayedText, setDisplayedText] = useState<string[]>(textParts);
   const [hoveredWord, setHoveredWord] = useState<{ line: number; word: number } | null>(null);
   const [shouldAnimate, setShouldAnimate] = useState(true);
