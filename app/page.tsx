@@ -51,7 +51,6 @@ export default function Home() {
     { src: "/images/dao/Google.svg", alt: "Google", name: "Google" },
     { src: "/images/dao/Ai16z.svg", alt: "a16z", name: "ai16z" },
     { src: "/images/dao/VirtualsProtocol.svg", alt: "Virtuals Protocol", name: "Virtuals Protocol" },
-    { src: "/images/dao/EigenLayer.svg", alt: "EigenLayer", name: "EigenLayer", dimensions: { width: 70, height: 40 }},
     { src: "/images/dao/Abstract.svg", alt: "Abstract", name: "Abstract" },
     { src: "/images/dao/StoryProtocol.svg", alt: "Story Protocol", name: "Story Protocol", dimensions: { width: 70, height: 40 }},
     { src: "/images/dao/Mechanism.svg", alt: "Mechanism Capital", name: "Mechanism Capital" },
@@ -61,8 +60,8 @@ export default function Home() {
     { src: "/images/dao/Arc.svg", alt: "ARC Protocol", name: "ARC" },
   ];
 
-  const firstRow = partners.slice(0, 7);
-  const secondRow = partners.slice(7);
+  const firstRowPartners = partners.slice(0, 6); // First 6 partners
+  const secondRowPartners = partners.slice(6);   // Remaining 5 partners
 
   const developmentAdvisors = [
     { name: "Shaw", role: "Ai16z", twitter: "@shawmakesmagic", link: "https://x.com/shawmakesmagic", image: "/images/Development/Shaw.jpg" },
@@ -351,38 +350,186 @@ export default function Home() {
     </motion.h2>
 
     {/* DAO Members Grid */}
-    <motion.div 
-      className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 max-w-6xl mx-auto mb-12 px-4"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      {partners.map((partner, index) => (
-        <motion.div
-          key={index}
-          className="flex flex-col items-center space-y-4"
-          variants={itemVariants}
-          whileHover={{ 
-            scale: 1.05,
-            transition: { duration: 0.2 }
+    <div className="hidden lg:block">
+      {/* First Row */}
+      <div className="flex justify-center mb-8">
+        <div className="grid grid-cols-6 gap-8" style={{ width: '80%' }}>
+          {firstRowPartners.map((partner, index) => (
+            <motion.div
+              key={index}
+              className="flex flex-col items-center space-y-4"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 }}}
+            >
+              <div className="w-[70px] sm:w-[90px] md:w-[100px] h-[70px] sm:h-[90px] md:h-[100px] flex items-center justify-center">
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={partner.dimensions?.width || 120}
+                  height={partner.dimensions?.height || 120}
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-white text-[11px] sm:text-sm font-light opacity-100">
+                {partner.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Second Row - Centered */}
+      <div className="flex justify-center">
+        <div 
+          className="grid gap-8"
+          style={{
+            gridTemplateColumns: `repeat(${secondRowPartners.length}, minmax(0, 1fr))`,
+            width: `${(secondRowPartners.length / 6) * 80}%`
           }}
         >
-          <div className="w-[70px] sm:w-[90px] md:w-[100px] h-[70px] sm:h-[90px] md:h-[100px] flex items-center justify-center">
-            <Image
-              src={partner.src}
-              alt={partner.alt}
-              width={partner.dimensions?.width || 120}
-              height={partner.dimensions?.height || 120}
-              className="object-contain"
-            />
-          </div>
-          <span className="text-white text-[11px] sm:text-sm font-light opacity-100">
-            {partner.name}
-          </span>
-        </motion.div>
-      ))}
-    </motion.div>
+          {secondRowPartners.map((partner, index) => (
+            <motion.div
+              key={index + 6}
+              className="flex flex-col items-center space-y-4"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 }}}
+            >
+              <div className="w-[70px] sm:w-[90px] md:w-[100px] h-[70px] sm:h-[90px] md:h-[100px] flex items-center justify-center">
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={partner.dimensions?.width || 120}
+                  height={partner.dimensions?.height || 120}
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-white text-[11px] sm:text-sm font-light opacity-100">
+                {partner.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Mobile/Tablet Layout */}
+    <div className="lg:hidden">
+      {/* First group (3x3 for mobile, 4x3 for tablet) */}
+      <div className="flex justify-center mb-8">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-8 sm:gap-10" style={{ width: '90%' }}>
+          {partners.slice(0, 8).map((partner, index) => ( // Show first 8 for tablet
+            <motion.div
+              key={index}
+              className={`flex flex-col items-center space-y-4 ${
+                index >= 6 ? 'hidden sm:flex' : '' // Hide 7th and 8th items on mobile
+              }`}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 }}}
+            >
+              <div className="w-[70px] sm:w-[90px] md:w-[100px] h-[70px] sm:h-[90px] md:h-[100px] flex items-center justify-center">
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={partner.dimensions?.width || 120}
+                  height={partner.dimensions?.height || 120}
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-white text-[11px] sm:text-sm font-light opacity-100">
+                {partner.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile: 7-9 items in third row (only visible on mobile) */}
+      <div className="flex justify-center mb-8 sm:hidden">
+        <div className="grid grid-cols-3 gap-8" style={{ width: '90%' }}>
+          {partners.slice(6, 9).map((partner, index) => (
+            <motion.div
+              key={index + 6}
+              className="flex flex-col items-center space-y-4"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 }}}
+            >
+              <div className="w-[70px] sm:w-[90px] md:w-[100px] h-[70px] sm:h-[90px] md:h-[100px] flex items-center justify-center">
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={partner.dimensions?.width || 120}
+                  height={partner.dimensions?.height || 120}
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-white text-[11px] sm:text-sm font-light opacity-100">
+                {partner.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile: Last 2 items centered */}
+      <div className="flex justify-center sm:hidden">
+        <div 
+          className="grid grid-cols-2 gap-8"
+          style={{ width: '60%' }}
+        >
+          {partners.slice(9).map((partner, index) => (
+            <motion.div
+              key={index + 9}
+              className="flex flex-col items-center space-y-4"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 }}}
+            >
+              <div className="w-[70px] sm:w-[90px] md:w-[100px] h-[70px] sm:h-[90px] md:h-[100px] flex items-center justify-center">
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={partner.dimensions?.width || 120}
+                  height={partner.dimensions?.height || 120}
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-white text-[11px] sm:text-sm font-light opacity-100">
+                {partner.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Tablet: Last 3 items centered */}
+      <div className="hidden sm:flex justify-center">
+        <div 
+          className="grid grid-cols-3 gap-8 sm:gap-10"
+          style={{ width: '70%' }}
+        >
+          {partners.slice(8).map((partner, index) => (
+            <motion.div
+              key={index + 8}
+              className="flex flex-col items-center space-y-4"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 }}}
+            >
+              <div className="w-[70px] sm:w-[90px] md:w-[100px] h-[70px] sm:h-[90px] md:h-[100px] flex items-center justify-center">
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={partner.dimensions?.width || 120}
+                  height={partner.dimensions?.height || 120}
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-white text-[11px] sm:text-sm font-light opacity-100">
+                {partner.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
 
     {/* AND MORE text */}
     <motion.p
@@ -817,8 +964,8 @@ export default function Home() {
 
             
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
       </section>
 
       {/* Human Hand Transition */}
@@ -1168,7 +1315,7 @@ export default function Home() {
                         </motion.li>
                       ))}
               </ul>
-                </div>
+            </div>
 
                   <div className="absolute -bottom-4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             </motion.div>
@@ -1232,7 +1379,7 @@ export default function Home() {
                   <p className="mt-4 text-gray-300 text-xl">
                     A: {faq.answer}
                   </p>
-        </div>
+            </div>
           </div>
               ))}
             </div>
