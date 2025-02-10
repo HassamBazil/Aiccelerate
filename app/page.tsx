@@ -322,7 +322,7 @@ export default function Home() {
             className="flex justify-center px-4 sm:px-8 md:px-12"
           >
             <AnimatedNumber 
-              finalValue={6300000000} 
+              finalValue={6200000000} 
               className="text-[24px] sm:text-[36px] md:text-[72px] lg:text-[96px] xl:text-[102px] font-light font-prata gradient-rainbow text-center"
               duration={5000}
             />
