@@ -287,9 +287,9 @@ export default function Home() {
             
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             
-            We are an Investment & Development DAO focused on the Crypto AI sector. Our members stem from the top open source AI teams, Coinbase, Google, and major funds. <br></br><br></br> 
+            We are a Development & Acceleration DAO focused on the Crypto AI sector. Our members stem from the top open source AI teams, Coinbase, Google, and major funds. <br></br><br></br> 
 
-            Our goal is two-fold: accelerate the development of decentralized open source AI, and invest in the most promising projects across multiple ecosystems. 
+            Our goal is to build and propel the development of decentralized open source AI, and accelerate the most promising projects across multiple ecosystems. 
           </p>
             <button 
               onClick={scrollToMission}
@@ -322,7 +322,7 @@ export default function Home() {
             className="flex justify-center px-4 sm:px-8 md:px-12"
           >
             <AnimatedNumber 
-              finalValue={13800000000} 
+              finalValue={6300000000} 
               className="text-[24px] sm:text-[36px] md:text-[72px] lg:text-[96px] xl:text-[102px] font-light font-prata gradient-rainbow text-center"
               duration={5000}
             />
@@ -958,7 +958,7 @@ export default function Home() {
               It has become impossible to chase every individual project across every platform so we will look to leverage our extensive network, product & investment experience to become the <b>home</b>  for the leading <b>builders </b>and <b>investors</b> of tomorrow.  </p>
 
               <p>
-              We aim to become both an <b>Investment DAO</b> and a <b>Development DAO</b> by fusing elements of both a <b>human</b> and <b>agentic</b> component. We plan to ship an array of agents that can elevate the space. Our first project is a public utility research agent that can help us, and the overall market make better judgement calls.
+              We aim to become both a <b>Development DAO</b> and an <b>Accelerator DAO</b> by fusing elements of both a <b>human</b> and <b>agentic</b> component. We plan to ship an array of agents that can elevate the space. Our first project is a public utility research agent that can help us, and the overall market make better judgement calls.
               </p>
 
             
@@ -1348,15 +1348,12 @@ export default function Home() {
                 question: "What is the Aiccelerate DAO token and what is the contract address?",
                 answer: (
                   <>
-                    $AICC will represent the DAO and all future initiatives. No new token will be created. The Contract Address is{' '}
+                    $AICC will represent the DAO and all future initiatives. The Contract Address is{' '}
                     <span className="break-all">3zQ1XAcbSejFZNdbTBGvFGQatvViYbcwgXZ5pQ3KRRaw</span>
                   </>
                 )
               },
-              {
-                question: "What are the tokenomics behind the $AICC Token?",
-                answer: "Projects will be required to donate to our DAO fund in order to be considered for an investment/grant. The profits from our DAO funds will be used to buy back our $AICC token. $AICC Partners will be able to participate in a gated group chat and will also be considered for future potential airdrops. The first agent we build will also incorporate additional tokenomics/utility to the $AICC token. No new token will be created. "
-              }
+           
             ].map((faq, index) => (
               <div key={index} className="border-b border-white pb-6">
                 <div 
