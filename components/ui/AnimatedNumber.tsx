@@ -8,7 +8,7 @@ interface AnimatedNumberProps {
 }
 
 const AnimatedNumber = ({ finalValue, className, duration = 2500 }: AnimatedNumberProps) => {
-  const [currentValue, setCurrentValue] = useState(13800000000);
+  const [currentValue, setCurrentValue] = useState(7100000000);
   const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
